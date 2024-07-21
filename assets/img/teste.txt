@@ -1,0 +1,58 @@
+<li><a href="#Home">Home</a></li>
+                    <li><a href="#Sobre Nós">Sobre Nós</a></li>
+                    <li><a href="#Palestras">Palestras</a></li>
+                    <li><a href="#Consultoria">Consultoria</a></li>
+                    <li><a href="#Treinamentos">Treinamentos</a></li>
+                    <li><a href="#Blog">Blog</a></li>
+                    <li><a href="#contato">Contato</a></li>
+
+
+
+
+                    <img src="file:///C:/DomusPetra/images/palestras.webp" alt="Palestras">
+                <h3>Palestras</h3>
+                <p>Descrição das Palestras</p>
+                <a href="#leia-mais">Leia Mais</a>
+            </div>
+            <div class="projeto">
+                <img src="file:///C:/DomusPetra/images/consultoria.webp" alt="Consultoria">
+                <h3>Consultoria</h3>
+                <p>Descrição da Consultoria</p>
+                <a href="#leia-mais">Leia Mais</a>
+            </div>
+            <div class="projeto">
+                <img src="file:///C:/DomusPetra/images/treinamento.webp" alt="Treinamento">
+                <h3>Treinamento</h3>
+                <p>Descrição dos Treinamentos</p>
+                <a href="#leia-mais">Leia Mais</a>
+            </div>
+        </section>
+
+
+
+document.querySelectorAll('.projetoHere are direct links to the social media icons in PNG format:
+
+1. **Facebook**: 
+   ![Facebook Icon](https://www.flaticon.com/premium-icon/icons/svg/2504/2504903.svg)
+
+2. **Instagram**: 
+   ![Instagram Icon](https://www.flaticon.com/premium-icon/icons/svg/2504/2504902.svg)
+
+3. **LinkedIn**: 
+   ![LinkedIn Icon](https://www.flaticon.com/premium-icon/icons/svg/2504/2504901.svg)
+
+4. **Pinterest**: 
+   ![Pinterest Icon](https://www.flaticon.com/premium-icon/icons/svg/2504/2504898.svg)
+
+5. **TikTok**: 
+   ![TikTok Icon](https://www.flaticon.com/premium-icon/icons/svg/2504/2504897.svg)
+
+6. **YouTube**: 
+   ![YouTube Icon](https://www.flaticon.com/premium-icon/icons/svg/2504/2504896.svg)
+
+You can download these icons from Flaticon. Once downloaded, place them in your `C:\DomusPetra\images\` directory.
+
+### Updated HTML Code
+Update the HTML code to use the downloaded icons:
+
+
