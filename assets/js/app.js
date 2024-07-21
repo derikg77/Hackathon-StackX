@@ -91,3 +91,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     event.preventDefault();
     validateForm();
 })
+
+ fetch('./assets/php/salvar.php', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ nome, email, mensagem }),
+})
+.then(response => response.json())
+.then(data => {
+    alert(data.message);
+})
+.catch((error) => {
+    console.error('Erro:', error);
+});
