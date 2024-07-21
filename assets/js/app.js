@@ -38,58 +38,56 @@
 
 // validar formulario
 
-const form = document.querySelector('.contact-form form');
+const form = document.getElementById('#form');
 const nameInput = document.getElementById('#name');
 const whatsappInput = document.getElementById('#whatsapp');
 const messageInput = document.getElementById('#message');
 const submitButton = document.getElementById('#submit');
 
+if (form === '') {
 
-if (!validateForm) {
-    function validateForm() {
-
-        // Validar campo de nome
-        if (nameInput === '') {
-            alert(nameInput, 'Por favor, insira seu nome.');
-            return;
-        }
-
-
-        // Validar campo de WhatsApp
-        if (whatsappInput === '') {
-            alert(whatsappInput, 'Por favor, insira seu número de WhatsApp.');
-
-        }
-
-        // Validar campo de mensagem
-        if (messageInput === '') {
-            alert(messageInput, 'Por favor, insira sua mensagem.');
-            return
-
-
-        }
-
-        if (submitButton === '') {
-            alert(submitButton, 'Por favor, preencha o formulário')
-            return
-
-
-        }
-    }
+    alert('Por favor, preencha todos os campos.')
+}
+else {
+    alert('formulario validado')
 
 }
 
-
-// document.querySelector('#submit').addEventListener('click', (e) => {
-//     e.preventDefault();
-// })
+function validateForm() {
 
 
-document.querySelector(".contact-form form").addEventListener('submit', (e) => {
-    e.preventDefault();
+    // Validar campo de nome
+    if (nameInput === '') {
+        alert(nameInput, 'Por favor, insira seu nome.');
+        return;
+
+    }
+
+
+    // Validar campo de WhatsApp
+    if (whatsappInput === '') {
+        alert(whatsappInput, 'Por favor, insira seu número de WhatsApp.');
+        return;
+
+    }
+
+
+    // Validar campo de mensagem
+    if (messageInput === '') {
+        alert(messageInput, 'Por favor, insira sua mensagem.');
+        return;
+
+
+    }
+    if (submitButton === '') {
+        alert(submitButton, 'formulario preenchido');
+        return;
+
+    }
+
+
+}
+document.addEventListener('DOMContentLoaded', (event) => {
+    event.preventDefault();
     validateForm();
-    form.reset();
-    alert('Formulario validado');
-
 })
-
