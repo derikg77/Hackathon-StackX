@@ -21,20 +21,20 @@
 
 // suavizar rolagem ao cliclar na pagina
 
-// const navLinks = document.querySelectorAll('nav a');
+const navLinks = document.querySelectorAll('nav a');
 
-// navLinks.forEach((link) => {
-//     link.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         const targetId = e.target.getAttribute('href');
-//         const targetelement = document.querySelector(targetId)
-//         targetelement.scrollIntoView({
-//             behavior: 'smooth',
-//             block: "end",
-//         })
-//         console.log(navLinks)
-//     })
-// })
+navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href');
+        const targetelement = document.querySelector(targetId)
+        targetelement.scrollIntoView({
+            behavior: 'smooth',
+            block: "end",
+        })
+        console.log(navLinks)
+    })
+})
 
 // validar formulario
 
@@ -46,10 +46,10 @@ const submitButton = document.getElementById('#submit');
 
 if (form === '') {
 
-    alert('Por favor, preencha todos os campos.')
+    // alert('Por favor, preencha todos os campos.')
 }
 else {
-    alert('formulario validado')
+    // alert('formulario validado')
 
 }
 
@@ -92,17 +92,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     validateForm();
 })
 
-//  fetch('./salvar.php', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({ nameInput, whatsappInput, messageInput }),
-// })
-// .then(response => response.json())
-// .then(data => {
-//     alert(data.messageInput);
-// })
-// .catch((error) => {
-//     console.error('Erro:', error);
-// });
+ fetch('./salvar.php', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ nameInput, whatsappInput, messageInput }),
+})
+.then(response => response.json())
+.then(data => {
+    alert(data.messageInput);
+})
+.catch((error) => {
+    console.error('Erro:', error);
+});
