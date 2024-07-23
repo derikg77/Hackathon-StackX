@@ -17,6 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ]);
 
     echo "Home inserida com sucesso!";
+    
+    header("Location: confirmacao.php?nome=" . urlencode($nome));
+    header("Location: confirmacao.php?numero=" . urlencode($numero));
+    header("Location: confirmacao.php?mensagem=" . urlencode($mensagem));
+    exit();
 }
 ?>
 <form method="POST">
