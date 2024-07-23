@@ -44,45 +44,30 @@ const whatsappInput = document.getElementById('#whatsapp');
 const messageInput = document.getElementById('#message');
 const submitButton = document.getElementById('#submit');
 
-if (form === '') {
-
-    // alert('Por favor, preencha todos os campos.')
-}
-else {
-    // alert('formulario validado')
-
-}
 
 function validateForm() {
 
 
-    // Validar campo de nome
-    if (nameInput === '') {
-        alert(nameInput, 'Por favor, insira seu nome.');
+    
+    if (nameInput == '') {
+        alert(nameInput, 'Por favor, insira seu nome.'); // validar campo nome
         return;
 
-    }
-
-
-    // Validar campo de WhatsApp
-    if (whatsappInput === '') {
-        alert(whatsappInput, 'Por favor, insira seu número de WhatsApp.');
+    }else if (whatsappInput === '') {
+        alert(whatsappInput, 'Por favor, insira seu número de WhatsApp.'); // validar campo whatsapp
         return;
 
-    }
-
-
-    // Validar campo de mensagem
-    if (messageInput === '') {
-        alert(messageInput, 'Por favor, insira sua mensagem.');
+    } else  if (messageInput === '') {
+        alert(messageInput, 'Por favor, insira sua mensagem.'); // validar campo mensagem
         return;
 
 
-    }
-    if (submitButton === '') {
-        alert(submitButton, 'formulario preenchido');
+    }else if (submitButton === '') {
+        alert(submitButton, 'Por favor, preencha o formulario');
         return;
 
+    } else {
+        // alert('formulario validado')
     }
 
 
@@ -92,7 +77,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     validateForm();
 })
 
- fetch('./salvar.php', {
+ fetch('./assets/php/insert.php', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

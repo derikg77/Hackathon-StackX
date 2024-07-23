@@ -1,4 +1,32 @@
 <?php
+
+require 'db.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = $_POST['nome'];
+    $numero = $_POST['numero'];
+    $mensagem = $_POST['mensagem'];
+   
+    $sql = "INSERT INTO palestras (nome, numero, mensagem) VALUES (:nome, :numero, :mensagem)";
+    $stmt = $pdo->prepare($sql);
+    
+    $stmt->execute([
+        ':nome' => $nome,
+        ':numero' => $numero,
+        ':mensagem' => $mensagem,
+    ]);
+
+    echo "Home inserida com sucesso!";
+}
+?>
+<form method="POST">
+    Nome: <input type="text" name="nome" required><br>
+    Numero: <input type="text" name="numero" required><br>
+    Mensagem: <textarea name="mensagem" required></textarea><br>
+    <input type="submit" value="Inserir Dados da Home">
+</form>
+<?php
+
 require 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
