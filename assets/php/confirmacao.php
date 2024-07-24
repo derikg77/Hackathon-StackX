@@ -6,7 +6,7 @@
     <title>Confirmação</title>
 </head>
 <body>
-    <h1>Mensagem Enviada!</h1>
-    <p>Obrigado, <?php require 'db.php'; echo htmlspecialchars($_GET['nome'] , $_GET['numero'], $_GET['mensagem']); ?>! Sua mensagem foi enviada com sucesso.</p>
+    <h2>Mensagem Enviada!</h2>
+    <p>Sua mensagem foi enviada com sucesso.</p>
 </body>
 </html>

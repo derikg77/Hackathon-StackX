@@ -21,34 +21,31 @@
 
 // suavizar rolagem ao cliclar na pagina
 
-const navLinks = document.querySelectorAll('nav a');
+// const navLinks = document.querySelectorAll('nav a');
 
-navLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = e.target.getAttribute('href');
-        const targetelement = document.querySelector(targetId)
-        targetelement.scrollIntoView({
-            behavior: 'smooth',
-            block: "end",
-        })
-        console.log(navLinks)
-    })
-})
+// navLinks.forEach((link) => {
+//     link.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         const targetId = e.target.getAttribute('href');
+//         const targetelement = document.querySelector(targetId)
+//         targetelement.scrollIntoView({
+//             behavior: 'smooth',
+//             block: "end",
+//         })
+//         console.log(navLinks)
+//     })
+// })
 
 // validar formulario
 
-const form = document.getElementById('#form');
-const nameInput = document.getElementById('#name');
-const whatsappInput = document.getElementById('#whatsapp');
-const messageInput = document.getElementById('#message');
-const submitButton = document.getElementById('#submit');
-
-
 function validateForm() {
 
+    const form = document.getElementById('#form');
+    const nameInput = document.getElementById('#nome');
+    const whatsappInput = document.getElementById('#whatsapp');
+    const messageInput = document.getElementById('#message');
+    const submitButton = document.getElementById('#submit');
 
-    
     if (nameInput == '') {
         alert(nameInput, 'Por favor, insira seu nome.'); // validar campo nome
         return;
@@ -67,27 +64,30 @@ function validateForm() {
         return;
 
     } else {
-        // alert('formulario validado')
+        // alert(form.value, 'formulario validado')
     }
 
 
 }
 document.addEventListener('DOMContentLoaded', (event) => {
+    
     event.preventDefault();
     validateForm();
 })
 
- fetch('./assets/php/insert.php', {
+fetch('assets/php/insert.php', {
     method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ nameInput, whatsappInput, messageInput }),
+    
+    body: new URLSearchParams({
+        'name': nome,
+        'telefone': whatsapp,
+        'mensagem': message,
+        'submit': submit,
+    })
 })
-.then(response => response.json())
+.then(response => response.text())
 .then(data => {
-    alert(data.messageInput);
-})
-.catch((error) => {
+    document.getElementById('resultado').innerHTML = data; // Mostra a resposta do PHP
+}).catch(error => {
     console.error('Erro:', error);
 });

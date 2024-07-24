@@ -1,184 +1,144 @@
 <?php
 
 require 'db.php';
+require 'confirmacao.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if (isset($_POST['nome']) && isset($_POST['whatsapp']) && isset($_POST['message']) ){
     $nome = $_POST['nome'];
-    $numero = $_POST['numero'];
-    $mensagem = $_POST['mensagem'];
+    $whatsapp = $_POST['whatsapp'];
+    $message = $_POST['message'];
    
-    $sql = "INSERT INTO palestras (nome, numero, mensagem) VALUES (:nome, :numero, :mensagem)";
+
+    $sql = "INSERT INTO home (nome, whatsapp, message) VALUES (:nome, :whatsapp, :message)";
     $stmt = $pdo->prepare($sql);
     
     $stmt->execute([
         ':nome' => $nome,
-        ':numero' => $numero,
-        ':mensagem' => $mensagem,
+        ':whatsapp' => $whatsapp,
+        ':message' => $message,
+
     ]);
-
-    echo "Home inserida com sucesso!";
-    
-    header("Location: confirmacao.php?nome=" . urlencode($nome));
-    header("Location: confirmacao.php?numero=" . urlencode($numero));
-    header("Location: confirmacao.php?mensagem=" . urlencode($mensagem));
-    exit();
-}
+    echo "<p>Formulário enviado!</p>";
+  
+    // Resto do código
+} 
 ?>
-<form method="POST">
-    Nome: <input type="text" name="nome" required><br>
-    Numero: <input type="text" name="numero" required><br>
-    Mensagem: <textarea name="mensagem" required></textarea><br>
-    <input type="submit" value="Inserir Dados da Home">
-</form>
-<?php
-
-require 'db.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $titulo = $_POST['titulo'];
-    $descricao = $_POST['descricao'];
-    $data = $_POST['data'];
-    $local = $_POST['local'];
-
-    $sql = "INSERT INTO palestras (titulo, descricao, data, local) VALUES (:titulo, :descricao, :data, :local)";
-    $stmt = $pdo->prepare($sql);
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     
-    $stmt->execute([
-        ':titulo' => $titulo,
-        ':descricao' => $descricao,
-        ':data' => $data,
-        ':local' => $local
-    ]);
-
-    echo "Palestra inserida com sucesso!";
-}
-?>
-
-<form method="POST">
-    Título: <input type="text" name="titulo" required><br>
-    Descrição: <textarea name="descricao" required></textarea><br>
-    Data: <input type="date" name="data" required><br>
-    Local: <input type="text" name="local" required><br>
-    <input type="submit" value="Inserir Palestra">
-</form>
-
-<?php
-require 'db.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $titulo = $_POST['titulo'];
-    $descricao = $_POST['descricao'];
-    $data = $_POST['data'];
-    $local = $_POST['local'];
-
-    $sql = "INSERT INTO treinamentos (titulo, descricao, data, local) VALUES (:titulo, :descricao, :data, :local)";
-    $stmt = $pdo->prepare($sql);
+    <form method="POST">
+        Nome: <input type="text" name="nome" required><br>
+        Numero: <input type="text" name="whatsapp" required><br>
+        Mensagem: <textarea name="message" required></textarea><br>
+        <input type="submit" value="Inserir Dados da Home">
+    </form>
+</body>
+</html> -->
+ 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        Título: <input type="text" name="titulo" required><br>
+        Descrição: <textarea name="descricao" required></textarea><br>
+        Data: <input type="date" name="data" required><br>
+        Local: <input type="text" name="local" required><br>
+        <input type="submit" value="Inserir Palestra">
+    </form>
     
-    $stmt->execute([
-        ':titulo' => $titulo,
-        ':descricao' => $descricao,
-        ':data' => $data,
-        ':local' => $local
-    ]);
+</body>
+</html> -->
 
-    echo "Treinamento inserido com sucesso!";
-}
-?>
 
-<form method="POST">
-    Título: <input type="text" name="titulo" required><br>
-    Descrição: <textarea name="descricao" required></textarea><br>
-    Data: <input type="date" name="data" required><br>
-    Local: <input type="text" name="local" required><br>
-    <input type="submit" value="Inserir Treinamento">
-</form>
 
-<?php
-require 'db.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $titulo = $_POST['titulo'];
-    $descricao = $_POST['descricao'];
-    $data = $_POST['data'];
-    $local = $_POST['local'];
-
-    $sql = "INSERT INTO consultoria (titulo, descricao, data, local) VALUES (:titulo, :descricao, :data, :local)";
-    $stmt = $pdo->prepare($sql);
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     
-    $stmt->execute([
-        ':titulo' => $titulo,
-        ':descricao' => $descricao,
-        ':data' => $data,
-        ':local' => $local
-    ]);
+    <form method="POST">
+        Título: <input type="text" name="titulo" required><br>
+        Descrição: <textarea name="descricao" required></textarea><br>
+        Data: <input type="date" name="data" required><br>
+        Local: <input type="text" name="local" required><br>
+        <input type="submit" value="Inserir Treinamento">
+    </form>
+</body>
+</html> -->
 
-    echo "Consultoria inserida com sucesso!";
-}
-?>
 
-<form method="POST">
-    Título: <input type="text" name="titulo" required><br>
-    Descrição: <textarea name="descricao" required></textarea><br>
-    Data: <input type="date" name="data" required><br>
-    Local: <input type="text" name="local" required><br>
-    <input type="submit" value="Inserir Consultoria">
-</form>
 
-<?php
-require 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $titulo = $_POST['titulo'];
-    $conteudo = $_POST['conteudo'];
-    $data = $_POST['data'];
-
-    $sql = "INSERT INTO blog (titulo, conteudo, data) VALUES (:titulo, :conteudo, :data)";
-    $stmt = $pdo->prepare($sql);
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     
-    $stmt->execute([
-        ':titulo' => $titulo,
-        ':conteudo' => $conteudo,
-        ':data' => $data
-    ]);
+    <form method="POST">
+        Título: <input type="text" name="titulo" required><br>
+        Descrição: <textarea name="descricao" required></textarea><br>
+        Data: <input type="date" name="data" required><br>
+        Local: <input type="text" name="local" required><br>
+        <input type="submit" value="Inserir Consultoria">
+    </form>
+</body>
+</html> -->
 
-    echo "Post de blog inserido com sucesso!";
-}
-?>
 
-<form method="POST">
-    Título: <input type="text" name="titulo" required><br>
-    Conteúdo: <textarea name="conteudo" required></textarea><br>
-    Data: <input type="date" name="data" required><br>
-    <input type="submit" value="Inserir Post de Blog">
-</form>
-
-<?php
-require 'db.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $mensagem = $_POST['mensagem'];
-    $data = $_POST['data'];
-
-    $sql = "INSERT INTO contato (nome, email, mensagem, data) VALUES (:nome, :email, :mensagem, :data)";
-    $stmt = $pdo->prepare($sql);
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     
-    $stmt->execute([
-        ':nome' => $nome,
-        ':email' => $email,
-        ':mensagem' => $mensagem,
-        ':data' => $data
-    ]);
+    <form method="POST">
+        Título: <input type="text" name="titulo" required><br>
+        Conteúdo: <textarea name="conteudo" required></textarea><br>
+        Data: <input type="date" name="data" required><br>
+        <input type="submit" value="Inserir Post de Blog">
+    </form>
+</body>
+</html> -->
 
-    echo "Mensagem de contato enviada com sucesso!";
-}
-?>
 
-<form method="POST">
-    Nome: <input type="text" name="nome" required><br>
-    Email: <input type="email" name="email" required><br>
-    Mensagem: <textarea name="mensagem" required></textarea><br>
-    Data: <input type="date" name="data" required><br>
-    <input type="submit" value="Enviar Mensagem">
-</form>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="POST">
+        Nome: <input type="text" name="nome" required><br>
+        Email: <input type="email" name="email" required><br>
+        Mensagem: <textarea name="mensagem" required></textarea><br>
+        Data: <input type="date" name="data" required><br>
+        <input type="submit" value="Enviar Mensagem">
+    </form>
+</body>
+</html> -->

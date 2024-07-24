@@ -32,9 +32,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="palestra.html">Palestras</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="palestras.html">Palestras</a></li>
                 <li><a href="consultoria.html">Consultoria</a></li>
                 <li><a href="treinamentos.html">Treinamentos</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -72,9 +72,9 @@
             </div>
             <div class="contact-form" id="form">
                 <h2>Entre em contato conosco!</h2>
-                <form>
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="name">
+                <form method="POST"  action="./assets/php/insert.php">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome">
 
                     <label for="whatsapp">WhatsApp com DDD</label>
                     <input type="text" id="whatsapp" name="whatsapp">
@@ -84,6 +84,7 @@
 
                     <button id="submit" type="submit">Enviar</button>
                 </form>
+                <div id="resultado"></div>
             </div>
         </div>
     </main>

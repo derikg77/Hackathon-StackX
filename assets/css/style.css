@@ -210,6 +210,7 @@ nav ul li a {
 
 
   .contact-form {
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -748,3 +749,140 @@ footer {
 }
 
 /* terceira parte css*/
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #003366;
+}
+
+.social-media-icons img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.left-header h1 {
+  color: #fff;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.right-header {
+  display: flex;
+  align-items: center;
+}
+
+.contact-email {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-agende {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+nav {
+  background-color: #0056b3;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+main {
+  padding-top: 150px;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-content {
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.services {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.service {
+  text-align: center;
+  flex-basis: 30%;
+}
+
+.service img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contact-form {
+  flex-basis: 30%;
+  margin: 0 auto;
+  /* margin-left: 20px; */
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-us img {
+  max-width: 40%;
+  height: auto;
+}
+
+.about-text {
+  max-width: 55%;
+}
+
+.about-text h2, .about-text h3 {
+  color: #0056b3;
+}
+.centralized-title {
+  grid-column: 1 / -1; /* Faz o título ocupar todas as colunas */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  margin-bottom: 20px; /* Espaçamento inferior para separar do restante da grid */
+}

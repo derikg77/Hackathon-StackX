@@ -1,67 +1,147 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultoria - Domus Petra</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Domus Petra - Consultoria</title>
+    <style>
+        .services {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px 0;
+        }
+
+        .service {
+            flex: 1;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .service img {
+            max-width: 60%;
+            transition: transform 0.2s;
+        }
+
+        .service img:hover {
+            transform: scale(1.1);
+        }
+
+        .service h3 {
+            margin-top: 10px;
+            color: #0056b3;
+        }
+
+        .service p {
+            text-align: justify;
+            padding: 0 10px;
+        }
+
+        h2 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .service:first-child img {
+            margin-top: -20px;
+        }
+
+        .service:nth-child(2) img {
+            margin-top: 0;
+        }
+
+        .service:nth-child(3) img {
+            margin-top: -20px;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Cabeçalho com Ícones de Mídia Social -->
     <header>
-        <div class="header-top">
-            <div class="social-icons">
-                <a href="#"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
-                <a href="#"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
-                <a href="#"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
-                <a href="#"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
-                <a href="#"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
-                <a href="#"><img src="./assets/img/youtube-icon.webp" alt="YouTube"></a>
+        <div class="top-bar">
+            <div class="left-header">
+                <div class="social-media-icons">
+                    <a href="https://www.facebook.com/DomusPetra"><img src="./assets/img/facebook-icon.webp"
+                            alt="Facebook"></a>
+                    <a href="https://www.instagram.com"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
+                    <a href="https://www.pinterest.com"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
+                    <a href="https://www.tiktok.com"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
+                    <a href="https://www.youtube.com"><img src="./assets/img/youtube-icon.webp" alt="YouTube"></a>
+
+                    <h1>Domus Petra</h1>
+                </div>
+
+                
             </div>
-            <a href="mailto:contato@domuspetra.com.br" class="contact-info">contato@domuspetra.com.br</a>
+            <div class="right-header">
+                <a href="mailto:contato@domuspetra.com.br" class="contact-email">contato@domuspetra.com.br</a>
+                <button class="btn-agende">AGENDE UM HORÁRIO</button>
+            </div>
         </div>
-        <div class="header-middle">
-            <h1>Domus Petra - Palestras, Consultoria e Treinamentos de Excelência</h1>
-        </div>
-        <div class="header-bottom">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                    <li><a href="palestras.html">Palestras</a></li>
-                    <li><a href="consultoria.html">Consultoria</a></li>
-                    <li><a href="treinamentos.html">Treinamentos</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="schedule-button">Agende um horário</button>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="palestras.html">Palestras</a></li>
+                <li><a href="consultoria.html">Consultoria</a></li>
+                <li><a href="treinamentos.html">Treinamentos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section class="consultoria">
+        <div class="content-wrapper">
+            <div class="consultoria-title">
             <h2>Consultoria</h2>
-            <div class="consultoria-content">
-                <div class="consultoria-item">
-                    <img src="assets/img/consultoria.webp" alt="Excelência Operacional">
+        </div>
+            <div class="services">
+                <div class="service">
+                    <a href="excelencia-operacional.html">
+                        <img src="./assets/img/Excelencia-Operacional.webp" alt="Excelência Operacional">
+                    </a>
                     <h3>Excelência Operacional</h3>
-                    <p>Consultoria destinada à melhoria do desempenho operacional das organizações...</p>
+                    <p>Consultoria destinada à melhoria do desempenho operacional das organizações, com redefinição e
+                        alinhamento dos objetivos estratégicos. Foco na melhoria e gestão de processos e pessoas,
+                        visando o aumento da eficiência, produtividade e qualidade.</p>
                 </div>
-                <div class="consultoria-item">
-                    <img src="assets/img/consultoria.webp" alt="Marketing Pessoal">
+                <div class="service">
+                    <a href="marketing-pessoal.html">
+                        <img src="./assets/img/Marketing-Pessoal.webp" alt="Marketing Pessoal">
+                    </a>
                     <h3>Marketing Pessoal</h3>
-                    <p>Consultoria destinada a melhorar a imagem perante clientes, parceiros e sociedade em geral...</p>
+                    <p>Consultoria destinada a melhorar a imagem perante clientes, parceiros e sociedade em geral. Foco
+                        principal no desenvolvimento da autoconfiança, e na gestão e fortalecimento da rede de
+                        relacionamentos.</p>
                 </div>
-                <div class="consultoria-item">
-                    <img src="assets/img/consultoria.webp" alt="Gestão Financeira e Orçamentária">
+                <div class="service">
+                    <a href="gestao-financeira.html">
+                        <img src="./assets/img/Gestao-Financeira.webp" alt="Gestão Financeira e Orçamentária">
+                    </a>
                     <h3>Gestão Financeira e Orçamentária</h3>
-                    <p>Consultoria que apresenta caminhos práticos para sair do tradicional ciclo vicioso da dependência...</p>
+                    <p>Consultoria que apresenta caminhos práticos para sair do tradicional ciclo vicioso da dependência
+                        e descontrole financeiro e construir um ciclo virtuoso de crescimento e liberdade financeira.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
+    <!-- Rodapé -->
     <footer>
-        <!-- Conteúdo do rodapé -->
+        <p>&copy; 2024 Domus Petra. Todos os direitos reservados.</p>
     </footer>
     <script src="./assets/js/app.js"></script>
 </body>
+
 </html>
