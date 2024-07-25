@@ -70,21 +70,23 @@
                     </div>
                 </div>
             </div>
-            <div class="contact-form" id="form">
+            <div id="contact-form" id="form">
                 <h2>Entre em contato conosco!</h2>
-                <form method="POST"  action="./assets/php/insert.php">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome">
-
-                    <label for="whatsapp">WhatsApp com DDD</label>
-                    <input type="text" id="whatsapp" name="whatsapp">
-
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" name="message"></textarea>
-
-                    <button id="submit" type="submit">Enviar</button>
+                <form id="contact-form" method="POST" action="./assets/php/insert.php" >
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+            
+                    <label for="whatsapp">WhatsApp:</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(11) 00000-0000">
+            
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" required></textarea>
+            
+                    <button type="submit">Enviar</button>
                 </form>
-                <div id="resultado"></div>
+            
+                <div id="response" class="message"></div>
+            
             </div>
         </div>
     </main>

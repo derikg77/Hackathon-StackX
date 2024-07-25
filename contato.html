@@ -237,15 +237,16 @@
                             </div>
                         </div>
                         <div class="right-column">
-                            <div class="contact-form">
+                            <div class="contact-form" id="form-contact">
                                 <h2>Entre em contato</h2>
-                                <form  method="POST"  action="insert.php">
-                                    <input type="text" name="name" placeholder="Seu nome" required>
-                                    <input type="email" name="email" placeholder="Seu email" required>
-                                    <input type="tel" name="phone" placeholder="Seu telefone" required>
-                                    <textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea>
-                                    <button type="submit">Enviar Mensagem</button>
+                                <form  method="POST" action="./assets/php/insert.php">
+                                    <input id="nome" type="text" name="name" placeholder="Seu nome" required>
+                                    <input id="email" type="email" name="email" placeholder="Seu email" required>
+                                    <input id="phone" type="tel" name="phone" placeholder="Seu telefone" required>
+                                    <textarea id="message" name="message" rows="5" placeholder="Sua mensagem" required></textarea>
+                                    <button onsubmit() type="submit">Enviar Mensagem</button>
                                 </form>
+                                <div id="response" class="message"></div>
                             </div>
                         </div>
                     </div>

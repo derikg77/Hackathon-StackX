@@ -1,93 +1,97 @@
-// // Adicione acessibilidade para surdos e mudos
-// document.addEventListener('DOMContentLoaded', function () {
-//     const contactForm = document.querySelector('.contact-form form');
+document.addEventListener('DOMContentLoaded', function () {
+    // Função para validar e enviar o formulário
+    function validateAndSubmitForm(formId) {
+        const form = document.getElementById(formId);
+        const nome = form.querySelector('#nome');
+        const whatsapp = form.querySelector('#whatsapp');
+        const email = form.querySelector('#email');
+        const phone = form.querySelector('#phone');
+        const message = form.querySelector('#message');
+        const responseDiv = document.getElementById('response');
 
-//     contactForm.addEventListener('submit', function (event) {
-//         event.preventDefault();
+        // Limpa a mensagem anterior
+        responseDiv.style.display = 'none';
+        responseDiv.className = 'message'; // Reseta a classe
 
-//         const name = document.getElementById('name').value;
-//         const whatsapp = document.getElementById('whatsapp').value;
-//         const message = document.getElementById('message').value;
+        // Verifica se todos os campos estão preenchidos
+        if (nome.value.trim() === '' || whatsapp.value.trim() === '' || email.value.trim() === '' || phone.value.trim() === '' || message.value.trim() === '') {
+            responseDiv.textContent = 'Por favor, preencha todos os campos do formulário.';
+            responseDiv.classList.add('error');
+            responseDiv.style.display = 'block';
+            return false; // Impede o envio do formulário
+        }
 
-//         const accessibilityMessage = `
-//     Nome: ${name}
-//     WhatsApp: ${whatsapp}
-//     Mensagem: ${message}
-//     `;
+        // Envia os dados do formulário para o arquivo PHP usando Fetch
+        fetch('assets/php/insert.php', {
+            method: 'POST',
+            body: new URLSearchParams({
+                'nome': nome.value,
+                'whatsapp': whatsapp.value,
+                'email': email.value,
+                'phone': phone.value,
+                'message': message.value,
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            responseDiv.textContent = data.message;
+            responseDiv.className = data.status === 'success' ? 'success' : 'error';
+            responseDiv.style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            responseDiv.textContent = 'Ocorreu um erro ao enviar a mensagem.';
+            responseDiv.classList.add('error');
+            responseDiv.style.display = 'block';
+        });
 
-//         alert('Sua mensagem foi enviada com sucesso! Aqui está o resumo: \n' + accessibilityMessage);
-//     });
-// });
+        // Limpa os campos do formulário
+        nome.value = '';
+        whatsapp.value = '';
+        email.value = '';
+        phone.value = '';
+        message.value = '';
 
-// suavizar rolagem ao cliclar na pagina
-
-// const navLinks = document.querySelectorAll('nav a');
-
-// navLinks.forEach((link) => {
-//     link.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         const targetId = e.target.getAttribute('href');
-//         const targetelement = document.querySelector(targetId)
-//         targetelement.scrollIntoView({
-//             behavior: 'smooth',
-//             block: "end",
-//         })
-//         console.log(navLinks)
-//     })
-// })
-
-// validar formulario
-
-function validateForm() {
-
-    const form = document.getElementById('#form');
-    const nameInput = document.getElementById('#nome');
-    const whatsappInput = document.getElementById('#whatsapp');
-    const messageInput = document.getElementById('#message');
-    const submitButton = document.getElementById('#submit');
-
-    if (nameInput == '') {
-        alert(nameInput, 'Por favor, insira seu nome.'); // validar campo nome
-        return;
-
-    }else if (whatsappInput === '') {
-        alert(whatsappInput, 'Por favor, insira seu número de WhatsApp.'); // validar campo whatsapp
-        return;
-
-    } else  if (messageInput === '') {
-        alert(messageInput, 'Por favor, insira sua mensagem.'); // validar campo mensagem
-        return;
-
-
-    }else if (submitButton === '') {
-        alert(submitButton, 'Por favor, preencha o formulario');
-        return;
-
-    } else {
-        // alert(form.value, 'formulario validado')
+        return false; // Impede o envio do formulário
     }
 
+    // Adiciona o evento de validação ao formulário
+    document.getElementById('form-contact').onsubmit = function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+        validateAndSubmitForm('form-contact'); // Chama a função de validação e envio
+    };
 
-}
-document.addEventListener('DOMContentLoaded', (event) => {
-    
-    event.preventDefault();
-    validateForm();
-})
+    // Suavizar rolagem ao clicar nos links de navegação
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = e.target.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: "start",
+                });
+            }
+        });
+    });
 
-fetch('assets/php/insert.php', {
-    method: 'POST',
-    
-    body: new URLSearchParams({
-        'name': nome,
-        'telefone': whatsapp,
-        'mensagem': message,
-        'submit': submit,
-    })
-})
-.then(response => response.text())
-.then(data => {
-    document.getElementById('resultado').innerHTML = data; // Mostra a resposta do PHP
-}).catch(error => {
-    console.error('Erro:', error);
+    // Acessibilidade para surdos e mudos
+    const contactForm = document.querySelector('.contact-form form');
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('nome').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        const message = document.getElementById('message').value;
+
+        const accessibilityMessage = `
+            Nome: ${name}
+            WhatsApp: ${whatsapp}
+            Mensagem: ${message}
+        `;
+
+        alert('Sua mensagem foi enviada com sucesso! Aqui está o resumo: \n' + accessibilityMessage);
+    });
 });

@@ -96,12 +96,9 @@ nav ul li a {
   align-items: flex-start;
   width: 100vw;
   height: 65vh;
-  display: flex;
   gap: 20px;
   justify-content: center;
   flex-direction: row;
-
-
 }
 
 .project {
@@ -143,32 +140,50 @@ nav ul li a {
   margin: 0 auto;
 }
 
-.contact-form {
+#contact-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   max-width: 300px;
-  width: 35%;
-  height: 395px;
+  width: 100%;
+  height: 500px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 20px;
+  padding: 10px;
   background-color: #f9f9f9;
+ 
+}
+.message {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid;
+  display: none; /* Oculta a mensagem inicialmente */
+}
+.success {
+  border-color: green;
+  color: green;
+}
+.error {
+  border-color: red;
+  color: red;
 }
 
-.contact-form h2 {
+#contact-form h2 {
+  font-size: 22px;
+  color: #003366;
   text-align: center;
   margin-top: 0;
+  margin-bottom: 5px;
 }
 
-.contact-form label {
+#contact-form label {
   display: block;
   margin-bottom: 5px;
 }
 
-.contact-form input,
-.contact-form textarea {
+#contact-form input,
+#contact-form textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -176,7 +191,7 @@ nav ul li a {
   border-radius: 5px;
 }
 
-.contact-form button {
+#contact-form button {
   width: 100%;
   padding: 10px;
   background-color: #007BFF;
@@ -209,7 +224,7 @@ nav ul li a {
   
 
 
-  .contact-form {
+  #contact-form {
 
     display: flex;
     flex-direction: column;

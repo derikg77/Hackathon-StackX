@@ -1,5 +1,6 @@
 <?php
 require 'db.php';
+require 'insert.php';
 // processar.php
 
 // Configurações de conexão com o banco de dados
@@ -20,15 +21,19 @@ if ($conn->connect_error) {
 $nome = htmlspecialchars($_POST['nome']);
 $whatsapp = htmlspecialchars($_POST['whatsapp']);
 $message = htmlspecialchars($_POST['message']);
+$email = htmlspecialchars($_POST['email']);
+$phone = htmlspecialchars($_POST['phone']);
+
+
 
 // Preparar e executar a consulta SQL
-$sql = "INSERT INTO contatos (nome, whatsapp, message, submit) VALUES (?, ?, ?)";
+$sql = "INSERT INTO contato (nome, whatsapp, message, email, phone) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", $nome, $whatsapp, $message);
+$stmt->bind_param("sss", $nome, $whatsapp, $message, $email, $phone);
 
 if ($stmt->execute()) {
-    // Redireciona para a página de confirmação
-    header("Location: confirmacao.php");
+    // Redireciona para a página de contato
+    header("Location:assets/php/contato.php");
     exit();
 } else {
     echo "Erro: " . $stmt->error;
