@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Função para validar e enviar o formulário
-    function validateAndSubmitForm(formId) {
-        const form = document.getElementById(formId);
+    function validarFormulario() {
+        const form = document.getElementById('#form');
         const nome = form.querySelector('#nome');
         const whatsapp = form.querySelector('#whatsapp');
-        const email = form.querySelector('#email');
-        const phone = form.querySelector('#phone');
         const message = form.querySelector('#message');
         const responseDiv = document.getElementById('response');
 
@@ -14,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         responseDiv.className = 'message'; // Reseta a classe
 
         // Verifica se todos os campos estão preenchidos
-        if (nome.value.trim() === '' || whatsapp.value.trim() === '' || email.value.trim() === '' || phone.value.trim() === '' || message.value.trim() === '') {
+        if (nome.value.trim() === '' || whatsapp.value.trim() === '' || message.value.trim() === '') {
             responseDiv.textContent = 'Por favor, preencha todos os campos do formulário.';
             responseDiv.classList.add('error');
             responseDiv.style.display = 'block';
@@ -22,76 +20,48 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Envia os dados do formulário para o arquivo PHP usando Fetch
-        fetch('assets/php/insert.php', {
-            method: 'POST',
-            body: new URLSearchParams({
-                'nome': nome.value,
-                'whatsapp': whatsapp.value,
-                'email': email.value,
-                'phone': phone.value,
-                'message': message.value,
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            responseDiv.textContent = data.message;
-            responseDiv.className = data.status === 'success' ? 'success' : 'error';
-            responseDiv.style.display = 'block';
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-            responseDiv.textContent = 'Ocorreu um erro ao enviar a mensagem.';
-            responseDiv.classList.add('error');
-            responseDiv.style.display = 'block';
-        });
+        const formData = new FormData();
+        formData.append('nome', nome.value);
+        formData.append('whatsapp', whatsapp.value);
+        formData.append('mensagem', message.value);
 
-        // Limpa os campos do formulário
-        nome.value = '';
-        whatsapp.value = '';
-        email.value = '';
-        phone.value = '';
-        message.value = '';
+        fetch('assets/php/processar_formulario.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); // Exibe a resposta do PHP
+                form.reset(); // Limpa o formulário
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
 
         return false; // Impede o envio do formulário
     }
 
     // Adiciona o evento de validação ao formulário
-    document.getElementById('form-contact').onsubmit = function(event) {
+    document.getElementById('#form').addEventListener('DOMContentLoaded', function(event) {
         event.preventDefault(); // Impede o envio padrão do formulário
-        validateAndSubmitForm('form-contact'); // Chama a função de validação e envio
-    };
-
-    // Suavizar rolagem ao clicar nos links de navegação
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach((link) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = e.target.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: "start",
-                });
-            }
-        });
-    });
-
-    // Acessibilidade para surdos e mudos
-    const contactForm = document.querySelector('.contact-form form');
-    contactForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById('nome').value;
-        const whatsapp = document.getElementById('whatsapp').value;
-        const message = document.getElementById('message').value;
-
-        const accessibilityMessage = `
-            Nome: ${name}
-            WhatsApp: ${whatsapp}
-            Mensagem: ${message}
-        `;
-
-        alert('Sua mensagem foi enviada com sucesso! Aqui está o resumo: \n' + accessibilityMessage);
+        validarFormulario('#form'); // Chama a função de validação e envio
     });
 });
+
+// // Acessibilidade para surdos e mudos
+// // const contactForm = document.querySelector('.contact-form form');
+// // contactForm.addEventListener('submit', function (event) {
+// //     event.preventDefault();
+
+// //     const name = document.getElementById('nome').value;
+// //     const whatsapp = document.getElementById('whatsapp').value;
+// //     const message = document.getElementById('message').value;
+
+// //     const accessibilityMessage = `
+// //         Nome: ${name}
+// //         WhatsApp: ${whatsapp}
+// //         Mensagem: ${message}
+// //     `;
+
+// //     alert('Sua mensagem foi enviada com sucesso! Aqui está o resumo: \n' + accessibilityMessage);
+// });

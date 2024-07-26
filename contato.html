@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Domus Petra</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -75,7 +75,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Domus Petra</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -223,9 +223,9 @@
 
 
                 <body>
-                    <div class="header">
+                  
                         <h1>Contato - Domus Petra</h1>
-                    </div>
+                    
                     <div class="container">
                         <div class="left-column">
                             <div class="map">
@@ -239,10 +239,11 @@
                         <div class="right-column">
                             <div class="contact-form" id="form-contact">
                                 <h2>Entre em contato</h2>
-                                <form  method="POST" action="./assets/php/insert.php">
+                                <form id="form-contact" action="assets/php/processar_contato.php" method="POST" onsubmit="return validarFormulario();"
+                                action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                                     <input id="nome" type="text" name="name" placeholder="Seu nome" required>
                                     <input id="email" type="email" name="email" placeholder="Seu email" required>
-                                    <input id="phone" type="tel" name="phone" placeholder="Seu telefone" required>
+                                    <input id="telefone" type="tel" name="telefone" placeholder="Seu telefone" required>
                                     <textarea id="message" name="message" rows="5" placeholder="Sua mensagem" required></textarea>
                                     <button onsubmit() type="submit">Enviar Mensagem</button>
                                 </form>
@@ -250,6 +251,8 @@
                             </div>
                         </div>
                     </div>
+                
+                    </body>
                     <script src="./assets/js/app.js"></script>
 
                 </body>

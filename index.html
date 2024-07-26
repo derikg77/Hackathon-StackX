@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domus Petra</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+
+</head>
 </head>
 
 <body>
@@ -70,9 +72,11 @@
                     </div>
                 </div>
             </div>
-            <div id="contact-form" id="form">
+            <div id="form-contact" method="POST" id="form">
                 <h2>Entre em contato conosco!</h2>
-                <form id="contact-form" method="POST" action="./assets/php/insert.php" >
+                <form form action="assets/php/processar_formulario.php" method="POST" onsubmit="return validarFormulario();"  
+                
+                action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" >
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
             
@@ -90,7 +94,10 @@
             </div>
         </div>
     </main>
-    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/app.js">
+
+        
+    </script>
 </body>
 
 </html>
