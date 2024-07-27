@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domus Petra</title>
-    <link rel="stylesheet" href="../css/style.css"> <!-- Ajuste o caminho conforme a estrutura do seu diretório -->
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Ajuste o caminho conforme a estrutura do seu diretório -->
     <style scoped>
         /* Seus estilos aqui */
     </style>

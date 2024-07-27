@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Função para validar e enviar o formulário
     function validarFormulario() {
-        const form = document.getElementById('#form');
+        const form = document.getElementById('form');
         const nome = form.querySelector('#nome');
         const whatsapp = form.querySelector('#whatsapp');
         const message = form.querySelector('#message');
-        const responseDiv = document.getElementById('response');
+        const responseDiv = document.getElementById('responseDiv');
 
         // Limpa a mensagem anterior
         responseDiv.style.display = 'none';
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             responseDiv.textContent = 'Por favor, preencha todos os campos do formulário.';
             responseDiv.classList.add('error');
             responseDiv.style.display = 'block';
+            exibirMensagemSucesso(responseDiv);
             return false; // Impede o envio do formulário
         }
 
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('whatsapp', whatsapp.value);
         formData.append('mensagem', message.value);
 
-        fetch('assets/php/processar_formulario.php', {
+        fetch('./assets/php/processar_formulario.php', {
             method: 'POST',
             body: formData
         })
@@ -41,13 +42,28 @@ document.addEventListener('DOMContentLoaded', function () {
         return false; // Impede o envio do formulário
     }
 
+    function exibirMensagemSucesso(responseDiv) {
+        responseDiv.textContent = 'Formulário enviado com sucesso!';
+        responseDiv.className = 'success'; // Adiciona a classe de sucesso
+        responseDiv.style.display = 'block'; // Mostra a mensagem
+
+        setTimeout(() => {
+            responseDiv.style.display = 'none'; // Esconde a mensagem após 3 segundos
+        }, 3000);
+    }
+
     // Adiciona o evento de validação ao formulário
-    document.getElementById('#form').addEventListener('DOMContentLoaded', function(event) {
-        event.preventDefault(); // Impede o envio padrão do formulário
-        validarFormulario('#form'); // Chama a função de validação e envio
+    document.addEventListener('DOMContentLoaded', function(event) {
+        const form = document.getElementById('form');
+
+        if(form) {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+                validarFormulario(); // Chama a função de validação e envio
+            });
+        }
     });
 });
-
 // // Acessibilidade para surdos e mudos
 // // const contactForm = document.querySelector('.contact-form form');
 // // contactForm.addEventListener('submit', function (event) {
