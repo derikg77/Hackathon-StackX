@@ -1,29 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Domus Petra</title>
-    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
-</head>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Domus Petra - Contato</title>
+    <style>
+        .contact-header {
+            text-align: center;
+            color: white;
+            background-color: #0056b3;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
 
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-form {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #004494;
+        }
+
+        .map-container {
+            flex: 1;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+
+        header {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
 <body>
+    <!-- Cabeçalho com Ícones de Mídia Social -->
     <header>
         <div class="top-bar">
-            <div class="social-icons">
-                <a href="#"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
-                <a href="#"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
-                <a href="#"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
-                <a href="#"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
-                <a href="#"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
-                <a href="#"><img src="./assets/img/youtube-icon.webp" alt="YouTube"></a>
+            <div class="left-header">
+                <div class="social-media-icons">
+                    <a href="https://www.facebook.com/DomusPetra"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
+                    <a href="https://www.instagram.com"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
+                    <a href="https://www.pinterest.com"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
+                    <a href="https://www.tiktok.com"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
+                    <a href="https://www.youtube.com"><img src="./assets/img/facebook-icon.webp" alt="YouTube"></a>
+                </div>
+                <img src="images/logo.png" alt="Domus Petra Logo" style="height: 50px;">
             </div>
-            <div class="contact-email">
-                <a href="mailto:contato@domuspetra.com.br">contato@domuspetra.com.br</a>
-            </div>
-            <div class="schedule-button">
-                <a href="#" class="button">Agende um horário</a>
+            <div class="right-header">
+                <a href="mailto:contato@domuspetra.com.br" class="contact-email">contato@domuspetra.com.br</a>
+                <button class="btn-agende">AGENDE UM HORÁRIO</button>
             </div>
         </div>
         <nav>
@@ -38,223 +94,31 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="page-header">
-            <h1>Contato</h1>
-        </section>
-        <section class="contact-content">
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.249696945312!2d108.2248263746314!3d16.060657838479514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219b663bfc3c1%3A0x1e2b089b1e1f05db!2sBitexco%20Financial%20Tower!5e0!3m2!1sen!2s!4v1682345678901!5m2!1sen!2s"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="contact-form-container">
-                <h2>Entre em contato</h2>
-                <form action="#" method="post">
-                    <input type="text" name="nome" placeholder="Seu nome" required>
-                    <input type="email" name="email" placeholder="Seu email" required>
-                    <input type="text" name="telefone" placeholder="Seu telefone" required>
-                    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-                    <button type="submit">Enviar Mensagem</button>
-                </form>
-            </div>
-        </section>
+
+    <div class="contact-header">
+        <h2>Contato - Domus Petra</h2>
+    </div>
+
+    <main class="contact-container">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.7488946796794!2d-48.82527698549882!3d-26.293114583391117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94deb1b09b957b0b%3A0xa7f0e5baf6fc4e93!2sR.%20Tangar%C3%A1%2C%20470%20-%20Iriri%C3%BA%2C%20Joinville%20-%20SC%2C%2089227-100%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1690243772706!5m2!1spt-BR!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="contact-form">
+            <h2>Entre em contato</h2>
+            <form>
+                <input type="text" name="name" placeholder="Seu nome">
+                <input type="email" name="email" placeholder="Seu email">
+                <input type="text" name="phone" placeholder="Seu telefone">
+                <textarea name="message" placeholder="Sua mensagem"></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
     </main>
+
+    <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 Domus Petra. Todos os direitos reservados.</p>
     </footer>
+    <script src="./assets/js/app.js"></script>
 </body>
-
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Domus Petra</title>
-    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
-</head>
-
-<body>
-    <header>
-        <div class="top-bar">
-            <div class="social-icons">
-                <a href="#"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
-                <a href="#"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
-                <a href="#"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
-                <a href="#"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
-                <a href="#"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
-                <a href="#"><img src="./assets/img/youtube-icon.webp" alt="YouTube"></a>
-            </div>
-            <div class="contact">
-                <div>
-                <a href="mailto:contato@domuspetra.com.br" class="contact-email">contato@domuspetra.com.br</a>
-            </div>
-            <div>
-                <a href="#" id="button" class="schedule-button">Agende um horário</a>
-            </div>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                <li><a href="palestras.html">Palestras</a></li>
-                <li><a href="consultoria.html">Consultoria</a></li>
-                <li><a href="treinamentos.html">Treinamentos</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="contact-header">
-            <h1>Contato - Domus Petra</h1>
-        </section>
-        <section class="contact-content">
-            <div class="map-container">
-
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Contato - Domus Petra</title>
-                    <link rel="stylesheet" href="./assets/css/style.css">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.249696945312!2d108.2248263746314!3d16.060657838479514!2m3!1f0!2f0!"></iframe>
-
-                    <style scoped>
-                        body {
-                            font-family: Arial, sans-serif;
-                            margin: 0;
-                            padding: 0;
-                        }
-                        .top-bar {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            background-color: #f9f9f9;
-                            padding: 10px 20px;
-                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                            border-radius: 5px;
-                        }
-                        .top-bar a {
-                            color: #fff;
-                        }
-                        .header {
-                            background-color: #0044cc;
-                            color: white;
-                            padding: 10px 0;
-                            text-align: center;
-                        }
-
-                        .schedule-button {
-
-                            padding: 10px 20px;
-                            background-color: #005bb5;
-                            color: #fff;
-                            border: none;
-                            border-radius: 5px;
-                            cursor: pointer;
-                            margin-left: 20px;
-
-                        }
-
-                        .container {
-                            display: flex;
-                            flex-direction: row;
-                            padding: 20px;
-                            max-width: 1200px;
-                            margin: auto;
-                        }
-
-                        .left-column {
-                            flex: 1;
-                            padding-right: 20px;
-                        }
-
-                        .right-column {
-                            flex: 1;
-                            padding-left: 20px;
-                        }
-
-                        .contact-form {
-                            background-color: #f9f9f9;
-                            padding: 20px;
-                            border-radius: 8px;
-                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                        }
-
-                        .contact-form h2 {
-                            margin-top: 0;
-                        }
-
-                        .contact-form input,
-                        .contact-form textarea {
-                            width: 100%;
-                            padding: 10px;
-                            margin-bottom: 10px;
-                            border: 1px solid #ddd;
-                            border-radius: 4px;
-                        }
-
-                        .contact-form button {
-                            padding: 10px 20px;
-                            background-color: #0044cc;
-                            color: white;
-                            border: none;
-                            border-radius: 4px;
-                            cursor: pointer;
-                        }
-
-                        .contact-form button:hover {
-                            background-color: #003399;
-                        }
-
-                        .map {
-                            width: 100%;
-                            height: 400px;
-                            background-color: #ddd;
-                        }
-                    </style>
-                </head>
-
-
-                <body>
-                  
-                        <h1>Contato - Domus Petra</h1>
-                    
-                    <div class="container">
-                        <div class="left-column">
-                            <div class="map">
-                                <!-- You can embed a Google Map iframe here -->
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2179000132836!2d106.65843031474993!3d10.762622992333297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f426f5e6f6b%3A0x2bc0e9b8c0a5a59e!2sBitexco%20Financial%20Tower!5e0!3m2!1sen!2s!4v1614755395638!5m2!1sen!2s"
-                                    width="100%" height="400" style="border:0;" allowfullscreen=""
-                                    loading="lazy"></iframe>
-                            </div>
-                        </div>
-                        <div class="right-column">
-                            <div class="contact-form" id="form-contact">
-                                <h2>Entre em contato</h2>
-                                <form id="form-contact" action="assets/php/processar_contato.php" method="POST" onsubmit="return validarFormulario();"
-                                action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-                                    <input id="nome" type="text" name="name" placeholder="Seu nome" required>
-                                    <input id="email" type="email" name="email" placeholder="Seu email" required>
-                                    <input id="telefone" type="tel" name="telefone" placeholder="Seu telefone" required>
-                                    <textarea id="message" name="message" rows="5" placeholder="Sua mensagem" required></textarea>
-                                    <button onsubmit() type="submit">Enviar Mensagem</button>
-                                </form>
-                                <div id="response" class="message"></div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    </body>
-                    <script src="./assets/js/app.js"></script>
-
-                </body>
-
 </html>

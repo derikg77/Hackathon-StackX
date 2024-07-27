@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Domus Petra - Consultoria - Gestão Financeira</title>
+    <style>
+        .content-wrapper {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+            align-items: flex-start; /* Alinha os itens no topo */
+        }
+
+        .image-column, .form-column {
+            flex: 0 0 30%; /* Colunas de imagem e formulário com 30% */
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: flex-start; /* Alinha no topo */
+        }
+
+        .text-column {
+            flex: 0 0 40%; /* Coluna de texto com 40% */
+            text-align: justify; /* Justifica o texto */
+        }
+
+        .image-column img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em; /* Aumenta o tamanho do texto */
+            line-height: 1.8; /* Aumenta o espaçamento entre as linhas */
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 20px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Garante que o formulário ocupe toda a largura da coluna */
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF; /* Cor azul */
+            border: none;
+            color: white;
+            border-radius: 20px; /* Bordas arredondadas */
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #0056b3; /* Azul mais escuro no hover */
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-column, .text-column, .form-column {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho com Ícones de Mídia Social -->
+    <header>
+        <div class="top-bar">
+            <div class="left-header">
+                <div class="social-media-icons">
+                    <a href="https://www.facebook.com/DomusPetra"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
+                    <a href="https://www.instagram.com"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
+                    <a href="https://www.pinterest.com"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
+                    <a href="https://www.tiktok.com"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
+                    <a href="https://www.youtube.com"><img src="./assets/img/facebook-icon.webp" alt="YouTube"></a>
+                </div>
+                <img src="./assets/img/logo.png" alt="Domus Petra Logo" style="height: 50px;">
+            </div>
+            <div class="right-header">
+                <a href="mailto:contato@domuspetra.com.br" class="contact-email">contato@domuspetra.com.br</a>
+                <button class="btn-agende">AGENDE UM HORÁRIO</button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="palestras.html">Palestras</a></li>
+                <li><a href="consultoria.html">Consultoria</a></li>
+                <li><a href="treinamentos.html">Treinamentos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="content-wrapper">
+            <div class="image-column column">
+                <img src="./assets/img/Gestao-Financeira.webp" alt="Gestão Financeira">
+            </div>
+            <div class="text-column column">
+                <div class="about-text">
+                    <h2>Gestão Financeira e Orçamentária
+                    </h2>
+                    <p>Consultoria com foco em orientar o cliente nas melhores práticas 
+                        de gestão financeira e orçamentaria, visando obter saúde financeira no 
+                        curto prazo, e independência financeira no longo prazo.
+                        Estudo de práticas que permitem refletir e estabelecer uma visão 
+                        especializada e integrada de sua administração financeira e orçamentária,
+                         com ênfase em desenvolver a capacidade de avaliação dos ambientes macroeconômicos
+                          e financeiros, estabelecer novos negócios e oportunidades de criar as competências
+                           gerenciais para a gestão financeira eficiente no cotidiano.
+                        
+                        </p>
+                </div>
+            </div>
+            <div class="form-column column">
+                <div class="contact-form">
+                    <h2>Entre em contato conosco!</h2>
+                    <form>
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="phone">WhatsApp com DDD</label>
+                        <input type="tel" id="phone" name="phone" required>
+
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Domus Petra. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

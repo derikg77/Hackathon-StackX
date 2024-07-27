@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Domus Petra - Consultoria - Excelência Operacional</title>
+    <style>
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .image-column, .text-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .image-column img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .text-column .about-text {
+            text-align: justify;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 20px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF; /* Cor azul */
+            border: none;
+            color: white;
+            border-radius: 20px; /* Bordas arredondadas */
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #0056b3; /* Azul mais escuro no hover */
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-column, .text-column {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho com Ícones de Mídia Social -->
+    <header>
+        <div class="top-bar">
+            <div class="left-header">
+                <div class="social-media-icons">
+                    <a href="https://www.facebook.com/DomusPetra"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
+                    <a href="https://www.instagram.com"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
+                    <a href="https://www.pinterest.com"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
+                    <a href="https://www.tiktok.com"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
+                    <a href="https://www.youtube.com"><img src="./assets/img/facebook-icon.webp" alt="YouTube"></a>
+                </div>
+                <img src="images/logo.png" alt="Domus Petra Logo" style="height: 50px;">
+            </div>
+            <div class="right-header">
+                <a href="mailto:contato@domuspetra.com.br" class="contact-email">contato@domuspetra.com.br</a>
+                <button class="btn-agende">AGENDE UM HORÁRIO</button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="palestras.html">Palestras</a></li>
+                <li><a href="consultoria.html">Consultoria</a></li>
+                <li><a href="treinamentos.html">Treinamentos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="content-wrapper">
+            <div class="image-column">
+                <img src="./assets/img/Excelencia-Operacional.webp" alt="Excelência Operacional">
+            </div>
+            <div class="text-column">
+                <div class="about-text">
+                    <h2>Excelência Operacional</h2>
+                    <p>Consultoria destinada à melhoria do desempenho operacional das organizações, 
+                        com redefinição e alinhamento dos objetivos estratégicos. Foco na melhoria 
+                        e gestão de processos e pessoas, visando o aumento da eficiência,
+                         produtividade e qualidade.
+                    </p>
+                </div>
+                <div class="contact-form" id="contact-form"">
+                    <h2>Entre em contato conosco!</h2>
+                    <form>
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="phone">WhatsApp com DDD</label>
+                        <input type="tel" id="phone" name="phone" required>
+
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Domus Petra. Todos os direitos reservados.</p>
+    </footer>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>

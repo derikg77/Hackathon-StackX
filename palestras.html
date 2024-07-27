@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Domus Petra - Palestras</title>
+    <style>
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service {
+            text-align: center;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service img {
+            max-width: 60%;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .service h3 {
+            margin-top: 10px;
+            color: #0056b3;
+        }
+
+        .service p {
+            text-align: justify;
+            padding: 0 10px;
+        }
+
+        h2 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        .service:nth-child(1) img {
+            margin-top: -20px;
+        }
+
+        .service:nth-child(2) img {
+            margin-top: 20px;
+        }
+
+        .service:nth-child(3) img {
+            margin-top: -20px;
+        }
+
+        .service a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .service:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho com Ícones de Mídia Social -->
+    <header>
+        <div class="top-bar">
+            <div class="left-header">
+                <div class="social-media-icons">
+                    <a href="https://www.facebook.com/DomusPetra"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
+                    <a href="https://www.instagram.com"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
+                    <a href="https://www.pinterest.com"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
+                    <a href="https://www.tiktok.com"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
+                    <a href="https://www.youtube.com"><img src="./assets/img/facebook-icon.webp" alt="YouTube"></a>
+                </div>
+                <img src="./assets/img/logo.png" alt="Domus Petra Logo" style="height: 50px;">
+            </div>
+            <div class="right-header">
+                <a href="mailto:contato@domuspetra.com.br" class="contact-email">contato@domuspetra.com.br</a>
+                <button class="btn-agende">AGENDE UM HORÁRIO</button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="palestras.html">Palestras</a></li>
+                <li><a href="consultoria.html">Consultoria</a></li>
+                <li><a href="treinamentos.html">Treinamentos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="content-wrapper">
+            <h2>Palestras</h2>
+            <div class="services">
+                <div class="service">
+                    <a href="gestao-consciente-do-tempo.html"></a>
+                    <img src="./assets/img/Gestao-Consciente.webp" alt="Gestão Consciente do Tempo">
+                    <h3>GESTÃO CONSCIENTE DO TEMPO</h3>
+                    <p>O Tempo é um dos recursos mais preciosos e escassos. A gestão consciente do tempo 
+                        possibilita enormes ganhos na qualidade de vida, na eficiência da rotina do dia-a-dia,
+                         e consequentemente na melhora dos resultados de qualquer atividade.</p>
+                </div>
+                <div class="service">
+                    <a href="atitude-eficiente-do-tempo.html"></a>
+                    <img src="./assets/img/Atitude-Eficiente.webp" alt="Atitude Eficiente do Tempo">
+                    <h3>ATITUDE EFICIENTE: O DIFERENCIAL COMPETITIVO!</h3>
+                    <p>A palestra Atitude Eficiente promove uma profunda reflexão quanto a importância
+                         do comportamento do indivíduo nos resultados.</p>
+                </div>
+                <div class="service">
+                    <a href="inovacao-sustentabilidade.html"></a>
+                    <img src="./assets/img/Inovacao-Sustentabilidade.webp" alt="Inovação e Sustentabilidade">
+                    <h3>INOVAÇÃO E SUSTENTABILIDADE</h3>
+                    <p>O papel da inovação e do comportamento humano frente aos desafios da 
+                        sustentabilidade.</p>
+                </div>
+                <div class="service">
+                    <a href="Gestao-Financeira-Pessoal.html"></a>
+                    <img src="./assets/img/Gestao-Financeira.webp" alt="Gestão Financeira pessoal">
+                    <h3>GESTÃO FINANCEIRA PESSOAL</h3>
+                    <p>Palestra que apresenta o impacto da saúde financeira no equilíbrio 
+                        da vida e na felicidade, e os caminhos para garantir o sucesso nesse aspecto 
+                        da vida.</p>
+                </div>
+                <div class="service">
+                    <a href="mobilidade-seguranca-transito.html"></a>
+                    <img src="./assets/img/Mobilidade-Seguranca.webp" alt="Mobilidade e Segurança no Transito">
+                    <h3>MOBILIDADE E SEGURANÇA NO TRÂNSITO</h3>
+                    <p>A palestra Mobilidade e Segurança no Trânsito se destina à conscientização 
+                        do papel do cidadão no trânsito. Trabalha o comportamento das pessoas
+                         para melhorar a mobilidade e qualidade de vida, e minimizar situações de
+                          stress e acidentes.
+                    </p>
+                </div>
+                <div class="service">
+                    <a href="excelencia-no-atendimento-ao-cliente.html"></a>
+                    <img src="./assets/img/Excelencia-Atendimento.webp" alt="Excêlencia no Atendimento ao Cliente">
+                    <h3>EXCELÊNCIA NO ATENDIMENTO AO CLIENTE</h3>
+                    <p>A palestra com Excelência no Atendimento ao Cliente visa principalmente 
+                        melhorar a qualidade do atendimento e consequentemente aumentar a satisfação
+                         do cliente. Os principais temas abordados na palestra são: ...
+                    </p>
+                </div>
+                <div class="service">
+                    <a href="comportamento-seguro.html"></a>
+                    <img src="./assets/img/Comportamento-Seguro.webp" alt="Comportamento Seguro">
+                    <h3>COMPORTAMENTO SEGURO</h3>
+                    <p>Palestra que aborda o tema Segurança do Trabalho com ênfase na relação 
+                        do comportamento humano e a atitude das pessoas em relação aos acidentes 
+                        de trabalho.
+                    </p>
+                </div>
+                <div class="service">
+                    <a href="cliente-interno.html"></a>
+                    <img src="./assets/img/Cliente-Interno.webp" alt="Cliente Interno">
+                    <h3>CLIENTE INTERNO</h3>
+                    <p>Palestra sobre o tema cliente interno. Aborda a excelência no atendimento
+                         ao cliente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Domus Petra. Todos os direitos reservados.</p>
+    </footer>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>

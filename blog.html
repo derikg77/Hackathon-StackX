@@ -1,71 +1,123 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Domus Petra</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Domus Petra - Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-bottom: 5px;
+        }
+
+        form input, form textarea, form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color: #0056b3;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #004494;
+        }
+
+    </style>
+</head>
 <body>
+    <!-- Cabeçalho com Ícones de Mídia Social -->
     <header>
-        <div class="header-top">
-            <div class="social-icons">
-                <a href="#"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
+        <div class="top-bar">
+            <div class="left-header">
+                <div class="social-media-icons">
+                    <a href="http://www.facebook.com/DomusPetra"><img src="./assets/img/facebook-icon.webp"
+                        alt="Facebook"></a>
                 <a href="#"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
                 <a href="#"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
                 <a href="#"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
                 <a href="#"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
                 <a href="#"><img src="./assets/img/youtube-icon.webp" alt="YouTube"></a>
+                <a href="mailto:contato@domuspetra.com.br"><img src="./assets/img/google-plus-icon..webp"
+                        alt="Email"></a>
+                </div>
+                <img src="./assets/img/logo.webp" alt="Domus Petra Logo" style="height: 50px;">
             </div>
-            <a href="mailto:contato@domuspetra.com.br" class="contact-info">contato@domuspetra.com.br</a>
+            <div class="right-header">
+                <a href="mailto:contato@domuspetra.com.br" class="contact-email">contato@domuspetra.com.br</a>
+                <button class="btn-agende">AGENDE UM HORÁRIO</button>
+            </div>
         </div>
-        <div class="header-middle">
-            <h1>Domus Petra - Palestras, Consultoria e Treinamentos de Excelência</h1>
-        </div>
-        <div class="header-bottom">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                    <li><a href="palestras.html">Palestras</a></li>
-                    <li><a href="consultoria.html">Consultoria</a></li>
-                    <li><a href="treinamento.html">Treinamentos</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="schedule-button">Agende um horário</button>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="palestras.html">Palestras</a></li>
+                <li><a href="consultoria.html">Consultoria</a></li>
+                <li><a href="treinamentos.html">Treinamentos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
+    <!-- Conteúdo Principal -->
     <main>
-        <section class="blog-header">
-            <h2>Descubra o Poder da Inovação para Impulsionar seus Negócios.</h2>
-            <p>Dê um mergulho no universo do Domus Petra e descubra o poder da inovação para impulsionar seus negócios.
-            </p>
-        </section>
-        <section class="blog-content">
-            <div class="blog-post">
-                <img src="images/blog1.jpg" alt="Inovação e Tecnologia">
-                <h3>Inovação e Tecnologia</h3>
-                <p>Explorando as últimas tendências em inovação e tecnologia para melhorar a eficiência dos negócios.
-                </p>
-            </div>
-            <div class="blog-post">
-                <img src="images/blog2.jpg" alt="Gestão de Projetos">
-                <h3>Gestão de Projetos</h3>
-                <p>Dicas e estratégias para gerenciar projetos complexos com eficácia e alcançar melhores resultados.
-                </p>
-            </div>
-            <div class="blog-post">
-                <img src="images/blog3.jpg" alt="Desenvolvimento Pessoal">
-                <h3>Desenvolvimento Pessoal</h3>
-                <p>A importância do desenvolvimento pessoal para o crescimento profissional e a qualidade de vida.</p>
-            </div>
-        </section>
-        <aside class="blog-sideba"></aside>
-        <script src="./assets/js/app.js"></script>
-    </body>
-
+        <div class="container">
+            <h2>Adicionar Nova Postagem</h2>
+            <form>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Digite aqui o título">
+                <label for="conteudo">Conteúdo:</label>
+                <textarea id="conteudo" name="conteudo" placeholder="Digite aqui seu texto"></textarea>
+                <button type="submit">Adicionar Nova Postagem</button>
+            </form>
+        </div>
+        <div class="container">
+            <h2>Editar sua postagem</h2>
+            <form>
+                <label for="edit-titulo">Título:</label>
+                <input type="text" id="edit-titulo" name="edit-titulo" placeholder="Title">
+                <label for="edit-conteudo">Conteúdo:</label>
+                <textarea id="edit-conteudo" name="edit-conteudo" placeholder="Type your body here."></textarea>
+                <button type="submit">Gravar Postagem</button>
+            </form>
+        </div>
+    </main>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Domus Petra. Todos os direitos reservados.</p>
+    </footer>
+</body>
 </html>

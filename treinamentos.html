@@ -1,66 +1,199 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treinamentos - Domus Petra</title>
-    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Domus Petra - Treinamentos</title>
+    <style>
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service {
+            text-align: center;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service img {
+            max-width: 60%;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .service:nth-child(1) img {
+            margin-top: -20px;
+        }
+
+        .service:nth-child(2) img {
+            margin-top: 20px;
+        }
+
+        .service:nth-child(3) img {
+            margin-top: -20px;
+        }
+
+        .service h3 {
+            margin-top: 10px;
+            color: #0056b3;
+        }
+
+        .service p {
+            text-align: justify;
+            padding: 0 10px;
+        }
+
+        .service a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .service:hover img {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Cabeçalho com Ícones de Mídia Social -->
     <header>
-        <div class="header-top">
-            <div class="social-icons">
-                <a href="#"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
-                <a href="#"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
-                <a href="#"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
-                <a href="#"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
-                <a href="#"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
-                <a href="#"><img src="./assets/img/youtube-icon.webp" alt="YouTube"></a>
+        <div class="top-bar">
+            <div class="left-header">
+                <div class="social-media-icons">
+                    <a href="https://www.facebook.com/DomusPetra"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
+                    <a href="https://www.instagram.com"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
+                    <a href="https://www.pinterest.com"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
+                    <a href="https://www.tiktok.com"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
+                    <a href="https://www.youtube.com"><img src="./assets/img/facebook-icon.webp" alt="YouTube"></a>
+                </div>
+                <img src="./assets/img/logo.png" alt="Domus Petra Logo" style="height: 50px;">
             </div>
-            <a href="mailto:contato@domuspetra.com.br" class="contact-info">contato@domuspetra.com.br</a>
+            <div class="right-header">
+                <a href="mailto:contato@domuspetra.com.br" class="contact-email">contato@domuspetra.com.br</a>
+                <button class="btn-agende">AGENDE UM HORÁRIO</button>
+            </div>
         </div>
-        <div class="header-middle">
-            <h1>Domus Petra - Palestras, Consultoria e Treinamentos de Excelência</h1>
-        </div>
-        <div class="header-bottom">
-            <nav>
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="palestra.html">Palestras</a></li>
-                    <li><a href="consultoria.html">Consultoria</a></li>
-                    <li><a href="treinamentos.html">Treinamentos</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="schedule-button">Agende um horário</button>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="palestras.html">Palestras</a></li>
+                <li><a href="consultoria.html">Consultoria</a></li>
+                <li><a href="treinamentos.html">Treinamentos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section class="treinamento">
+        <div class="content-wrapper">
             <h2>Treinamentos</h2>
-            <div class="treinamento-content">
-                <div class="treinamento-item">
+            <div class="services">
+                <div class="service">
+                    <a href="treinamento-Workshop- Inovação- Humana.html"></a>
                     <img src="./assets/img/treinamento.webp" alt="Workshop Inovação Humana">
-                    <h3>Workshop Inovação Humana</h3>
-                    <p>Uma abordagem profunda sobre a mudança de comportamento e mentalidade do profissional moderno...</p>
+                    <h3>WORKSHOP INOVAÇÃO HUMANA</h3>
+                    <p>Uma abordagem profunda sobre a mudança de comportamento e mentalidade 
+                        do profissional moderno, com foco em resultados inovadores.</p>
                 </div>
-                <div class="treinamento-item">
-                    <img src="./assets/img/treinamento.webp" alt="Ferramentas de Gestão e Qualidade">
-                    <h3>Ferramentas de Gestão e Qualidade</h3>
-                    <p>Treinamento de Ferramentas de Gestão capacita o participante a utilizar modernas técnicas para...</p>
+                <div class="service">
+                    <a href="treinamento-ferramenta-gestao.html"></a>
+                    <img src="./assets/img/ferramenta-gestao-qualidade.webp" alt="Ferramenta de Gestao e Qualidade">
+                    <h3>FERRAMENTAS DE GESTÃO E QUALIDADE</h3>
+                    <p>Treinamento de Ferramentas de Gestão capacita o participante a utilizar 
+                        modernas técnicas para melhorar a eficiência e gestão das atividades e processos,
+                         em todas as áreas das organizações.</p>
                 </div>
-                <div class="treinamento-item">
-                    <img src="./assets/img/treinamento.webp" alt="Solução Eficaz de Problemas">
-                    <h3>Solução Eficaz de Problemas - Programa Completo</h3>
-                    <p>O Treinamento Solução Eficaz de Problemas trabalha as metodologias e ferramentas mais consagradas na...</p>
+                <div class="service">
+                    <a href="solucao-eficaz-problemas.html"></a>
+                    <img src="./assets/img/solucao-eficaz-problema.webp" alt="Solucao Eficaz de Problemas">
+                    <h3>SOLUÇÃO EFICAZ DE PROBLEMAS - PROGRAMA COMPLETO
+                    </h3>
+                    <p>O Treinamento Solução Eficaz de Problemas trabalha as metodologias
+                         e ferramentas mais consagradas na melhoria de processos e solução de problemas.
+                    </p>
                 </div>
+                <div class="service">
+                    <a href="treinamento-metodologia-solucao-problemas.html"></a>
+                    <img src="./assets/img/8d-metodo-solucao-problema.webp" alt=" 8D Método de Soluções de Problemas">
+                    <h3>8D - MÉTODO DE SOLUÇÃO DE PROBLEMAS
+                    </h3>
+                    <p>O Método 8D é destinado à solução de problemas
+                         e resposta à não-conformidades detectadas nos processos
+                          ou em clientes. É um método estruturado em oito etapas principais 
+                          e e propõem soluções eficazes e abrangentes.
+
+                        .</p>
+                </div>
+                <div class="service">
+                    <a href="treinamento-desenvolvimento-equipes.html"></a>
+                    <img src="./assets/img/desenvolvimento-equipes-alto-desempenho.webp" alt="Desenvolvimento de equipes de alto desempenho">
+                    <h3>DESENVOLVIMENTO DE EQUIPES DE ALTO DESEMPENHO.</h3>
+                    <p>Treinamento destinado a capacitar e desenvolver os participantes
+                         na formação de times de alto desempenho</p>
+                </div>
+                <div class="service">
+                    <a href="trenamento-metodo -solucao-problemas.html"></a>
+                    <img src="./assets/img/metodologia-solucoes-problema.webp" alt="Metodologia de Solução de Problemas">
+                    <h3>QC STORY / MASP - METODOLOGIA SOLUÇÃO DE PROBLEMAS</h3>
+                    <p>Metodologia de Solução de Problemas e Melhoria de Processo que apresenta
+                        um passo a passo racional e eficiente na análise de causas, planejamento
+                         e tomada de ações. Baseada no PDCA, é também um método gerencial 
+                         com elevado grau de eficácia.</p>
+                </div>
+                <div class="service">
+                    <a href="treinamento-lean-leadership.html"></a>
+                    <img src="./assets/img/desenvolvimento-liderança.webp" alt="Lean Leadership Desenvolvimento de Liderança">
+                    <h3>LEAN LEADERSHIP - DESENVOLVIMENTO DE LIDERANÇA
+                    </h3>
+                    <p>Liderança é fator chave no resultado das organizações. 
+                        A retenção de talentos depende prioritariamente de bons líderes.</p>
+                </div>
+
+
             </div>
-        </section>
+        </div>
     </main>
+    <!-- Rodapé -->
     <footer>
-        <!-- Conteúdo do rodapé -->
+        <p>&copy; 2024 Domus Petra. Todos os direitos reservados.</p>
     </footer>
-    <script src="./assets/js/app.js"></script></body>
+    <script src="./assets/js/app.js"></script>
+</body>
 </html>

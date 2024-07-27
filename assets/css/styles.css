@@ -1,0 +1,188 @@
+@import './blog.css';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.social-media-icons img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.left-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.right-header {
+  display: flex;
+  align-items: center;
+}
+
+.contact-email {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-agende {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+nav {
+  background-color: #0056b3;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+main {
+  padding-top: 150px;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.service {
+  text-align: center;
+  flex-basis: 30%;
+}
+
+
+.service img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Arredondar cantos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionar sombra */
+  transition: transform 0.3s, box-shadow 0.3s; /* Adicionar transição */
+}
+
+.service img:hover {
+  transform: scale(1.05); /* Aumentar ligeiramente o tamanho da imagem ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumentar a sombra ao passar o mouse */
+}
+
+
+
+h2, h3 {
+  color: #0056b3; /* Azul */
+}
+
+/* Opcional: Estilo adicional para links "Leia Mais" */
+.service a {
+  color: #0056b3; /* Azul */
+  text-decoration: none;
+}
+
+.service a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+.contact-form {
+  flex-basis: 30%;
+  margin-left: 20px;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-us img {
+  max-width: 40%;
+  height: auto;
+}
+
+.about-text {
+  max-width: 55%;
+  text-align: justify;
+
+}
+
+.about-text h2, .about-text h3 {
+  color: #0056b3;
+}
+.centralized-title {
+  grid-column: 1 / -1; /* Faz o título ocupar todas as colunas */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  margin-bottom: 20px; /* Espaçamento inferior para separar do restante da grid */
+}
