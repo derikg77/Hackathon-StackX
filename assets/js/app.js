@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('whatsapp', whatsapp.value);
         formData.append('mensagem', message.value);
 
-        fetch('http://localhost/xampp/hackatton/', {
+        fetch('assets/php/processar_formulario.php', {
             method: 'POST',
             body: formData
         })
