@@ -20,11 +20,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 20px;
             padding: 20px;
             margin-top: 20px;
         }
 
         .contact-form2 {
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -122,14 +124,15 @@
         <div class="contact-form2">
             <h2>Entre em contato</h2>
             <form id="form">
-                <input type="text" name="name" placeholder="Seu nome">
+                <input type="text" name="nome" placeholder="Seu nome">
                 <input type="email" name="email" placeholder="Seu email">
-                <input type="text" name="phone" placeholder="Seu telefone">
+                <input type="text" name="telefone" placeholder="Seu telefone">
                 <textarea name="message" placeholder="Sua mensagem"></textarea>
                 <button type="submit">Enviar Mensagem</button>
             </form>
-            <div id="responseDiv"></div> <!-- Div para mensagens de resposta -->
+          
         </div>
+        <div id="response" class="message"></div> <!-- Div para mensagens de resposta -->
     </main>
 
     <!-- Rodapé -->

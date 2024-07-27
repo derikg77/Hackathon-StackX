@@ -197,6 +197,28 @@ footer {
   /* Espaçamento inferior para separar do restante da grid */
 }
 
+ /* Estilo base para a caixa de mensagem */
+ .message {
+  padding: 15px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  margin-top: 10px; /* Margem superior */
+  display: none; /* Inicialmente escondido */
+}
+
+/* Estilo para mensagens de erro */
+.error {
+  background-color: #f8d7da; /* Fundo vermelho claro */
+  color: #721c24; /* Cor do texto vermelho escuro */
+  border: 1px solid #f5c6cb; /* Borda vermelha */
+}
+
+/* Estilo para mensagens de sucesso */
+.success {
+  background-color: #d4edda; /* Fundo verde claro */
+  color: #155724; /* Cor do texto verde escuro */
+  border: 1px solid #c3e6cb; /* Borda verde */
+}
+
 @media (max-width: 768px) {
 
   nav ul {
@@ -273,7 +295,7 @@ footer {
     max-width: 1200px; /* Largura máxima para desktop */
     margin: 20px auto; /* Centraliza horizontalmente */
   }
-  .contact-form {
+  .contact-form2 {
     width: 60%; /* Ocupa 60% da largura do container */
 }
  

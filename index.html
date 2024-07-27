@@ -4,29 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <style>
-        #responseDiv {
-            display: none; /* Inicialmente escondido */
-        }
-
-        .error {
-            color: red;
-            background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-
-        .success {
-            color: green;
-            background-color: #d4edda;
-            border: 1px solid #c3e6cb;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-    </style>
+   
     <title>Domus Petra</title>
 </head>
 <body>
@@ -96,7 +74,7 @@
                 <div class="contact-form">
                     <h2>Entre em contato conosco!</h2>
                     <form id="form">
-                        <label for="name">Nome</label>
+                        <label for="nome">Nome</label>
                         <input type="text" id="nome" name="name">
                         <label for="whatsapp">WhatsApp com DDD</label>
                         <input type="text" id="whatsapp" name="whatsapp">
@@ -104,8 +82,12 @@
                         <textarea id="message" name="message"></textarea>
                         <button type="submit">Enviar</button>
                     </form>
-                    <div id="responseDiv"></div> <!-- Div para mensagens de resposta -->
+
+                    <div id="response" class="message">oiiii</div> <!-- Div para mensagens de resposta -->
+
+                   
                 </div>
+               
             </div>
         </div>
     </main>

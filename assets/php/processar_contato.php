@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Obter dados do formulário
-    $nome = htmlspecialchars($_POST['nome']);
-    $whatsapp = htmlspecialchars($_POST['whatsapp']);
-    $mensagem = htmlspecialchars($_POST['message']);
-    $email = htmlspecialchars($_POST['email']);
-    $telefone = htmlspecialchars($_POST['telefone']);
+    $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+    $whatsapp = isset($_POST['whatsapp']) ? $_POST['whatsapp'] : '';
+    $mensagem = isset($_POST['mensagem']) ? $_POST['mensagem'] : '';
+    $email = isset($_POST['email']) ? $_POST['email']: '';
+    $telefone = isset($_POST['telefone']) ? $_POST['telefone']: '';
 
     // Inserir dados no banco de dados
     $sql = "INSERT INTO contato (nome, telefone, email, mensagem) VALUES ('$nome', '$telefone', '$email', '$mensagem')";
@@ -34,6 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $conn->close();
+} else {
+    // Se não for um POST, retornar um erro
+    http_response_code(405);
+    echo "Método não permitido.";
 }
 ?>
 

@@ -16,22 +16,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Obter dados do formulário
-    $nome = htmlspecialchars($_POST['nome']);;
-    $whatsapp = htmlspecialchars($_POST['whatsapp']);;
-    $message = htmlspecialchars($_POST['message']);;
+    $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+    $whatsapp = isset($_POST['whatsapp']) ? $_POST['whatsapp'] : '';
+    $mensagem = isset($_POST['mensagem']) ? $_POST['mensagem'] : '';
 
     // Preparar e executar a inserção dos dados
     $stmt = $conn->prepare("INSERT INTO home (nome, whatsapp, mensagem) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $nome, $whatsapp, $message);
 
     if ($stmt->execute()) {
-        echo "Novo registro criado com sucesso";
+        echo "Formulário recebido com sucesso!";
     } else {
         echo "Erro: " . $stmt->error;
     }
 
     $stmt->close();
     $conn->close();
+} else {
+    // Se não for um POST, retornar um erro
+    http_response_code(405);
+    echo "Método não permitido.";
 }
 ?>
 
