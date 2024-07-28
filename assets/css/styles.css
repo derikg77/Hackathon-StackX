@@ -528,6 +528,12 @@ main {
   /* Cor do texto verde escuro */
   border: 1px solid #c3e6cb;
   /* Borda verde */
+} .contact-container {
+  max-width: 1200px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -688,15 +694,14 @@ main {
   }
 
   .contact-container {
-    max-width: 1200px;
-    /* Largura máxima para desktop */
-    margin: 20px auto;
+    padding: 5px;
     /* Centraliza horizontalmente */
+    margin: 0 auto;
   }
 
   .contact-form2 {
     width: 80%;
-    /* Ocupa 60% da largura do container */
+    margin: 0 auto;
   }
 
   .container {
@@ -732,6 +737,8 @@ main {
 @media (max-width: 680px) {
   .contact-container {
     flex-direction: column;
+    margin: 0 auto;
+    padding: 5px;
   }
 
   .top-bar {
@@ -740,6 +747,9 @@ main {
 
   header {
     height: 15%;
+  }
+  .contact-form2 {
+    margin: 0 auto;
   }
 
 }
@@ -792,11 +802,12 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 0;
-    margin: 0;
+    padding: 5px;
+    margin: 0 auto;
   }
 
   .contact-form2 {
     width: 100%;
+    margin: 0 auto;
   }
 }
