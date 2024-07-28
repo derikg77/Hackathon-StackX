@@ -52,6 +52,7 @@ img {
   max-width: 100%;
   margin: 0 auto;
   height: auto;
+  display: block;
 }
 
 .top-bar {
@@ -70,7 +71,11 @@ img {
   height: 30px;
   margin-right: 10px;
 }
-
+.social-media-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .left-header h1 {
   margin: 0;
   font-size: 24px;
@@ -166,11 +171,42 @@ nav ul li a {
   margin: 0 auto;
   padding: 20px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 20px;
   width: 100%;
 }
+.content-wrapper img {
+  width: 100%;
+  display: block;
+}
+.image-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.image-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.contact-button {
+  margin-top: 10px; /* Diminuído o margin-top para melhorar a ergonomia */
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-
+.contact-button:hover {
+  background-color: #0056b3;
+}
 .services {
   display: flex;
   justify-content: space-between;
@@ -530,15 +566,28 @@ main {
   /* Borda verde */
 } .contact-container {
   max-width: 1200px;
-  display: flex; 
-  align-items: center;
-  justify-content: center;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centraliza os itens verticalmente */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  padding: 80px 0; /* Ajusta o padding vertical para manter o espaçamento */
+  gap: 80px;
   margin: 0 auto;
 }
 .success-message {
   display: none;
   color: green;
   margin-top: 10px;
+}
+.text-column {
+  display: flex; /* Ativa o Flexbox */
+  flex-direction: column; /* Organiza os itens em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  width: 100%; /* Define a largura como 100% */
+  padding: 10px; /* Adiciona um pouco de espaçamento interno */
+  box-sizing: border-box; /* Inclui padding e border no tamanho total */
 }
 @media (max-width: 768px) {
   .logo img {
@@ -571,7 +620,9 @@ main {
     flex-direction: column;
     width: 100%;
   }
-
+  .text-column {
+    flex-direction: column;
+  }
   .nav-menu.active {
     display: flex;
   }
@@ -698,13 +749,15 @@ main {
   }
 
   .contact-container {
-    padding: 10px;
+    padding: 40px 0;
     /* Centraliza horizontalmente */
     margin: 0 auto;
   }
 
   .contact-form2 {
     width: 90%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
@@ -726,6 +779,10 @@ main {
   .text p {
     text-align: center;
   }
+  .text-column {
+    width: 100%;
+    flex-direction: column;
+  }
 
   footer {
     padding: 20px 0;
@@ -744,7 +801,7 @@ main {
   .contact-container {
     flex-direction: column;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px 0; 
   }
 
   .top-bar {
@@ -755,12 +812,17 @@ main {
     height: 15%;
   }
   .contact-form2 {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 95%;
     margin: 0 auto;
   }
-
+  .text-column {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 480px) {
@@ -811,14 +873,19 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 5px;
+    padding: 10px 0; 
     margin: 0 auto;
   }
 
   .contact-form2 {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     margin: 0 auto;
+  }
+  .text-column {
+    flex-direction: column;
   }
 }
