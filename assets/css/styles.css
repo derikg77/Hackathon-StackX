@@ -701,6 +701,8 @@ main {
 
   .contact-form2 {
     width: 80%;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
   }
 
@@ -749,6 +751,9 @@ main {
     height: 15%;
   }
   .contact-form2 {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -807,6 +812,8 @@ main {
   }
 
   .contact-form2 {
+    align-items: center;
+    justify-content: center;
     width: 100%;
     margin: 0 auto;
   }
