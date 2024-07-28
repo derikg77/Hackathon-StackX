@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  
 
 }
 
@@ -39,7 +40,7 @@ img {
   justify-content: space-between;
   align-items: center;
   width: 100%;
- 
+
 }
 
 .social-media-icons img {
@@ -130,10 +131,10 @@ nav ul li a {
   font-size: 1.5rem;
   cursor: pointer;
 }
-
-
-main {
-  padding-top: 150px;
+.logo img {
+  margin-top: 15px;
+  max-width: 120px;
+  height: auto;
 }
 
 .content-wrapper {
@@ -141,14 +142,11 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  gap: 20px;
+  width: 100%; 
 }
 
-.main-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  justify-content: center;
-}
 
 .services {
   display: flex;
@@ -160,9 +158,13 @@ main {
   text-align: center;
   flex-basis: 30%;
 }
-
+ .service p {
+  text-align: center; /* Centraliza o texto */
+  padding: 10px; /* Padding para o texto */
+ }
 
 .service img {
+ 
   max-width: 100%;
   height: auto;
   border-radius: 10px;
@@ -194,10 +196,14 @@ h3 {
   /* Azul */
   text-decoration: none;
 }
-
 .contact-form {
-  flex-basis: 30%;
-  margin-left: 20px;
+  display: flex;
+  flex-direction: column; /* Empilha os campos do formulário verticalmente */
+  width: 100%; /* O formulário ocupa 100% da largura do container */
+  max-width: 600px; /* Largura máxima do formulário */
+}
+.contact-form label {
+  margin-top: 10px; /* Espaçamento entre os rótulos e os campos */
 }
 
 
@@ -213,7 +219,12 @@ footer {
 
 .about-us {
   display: flex;
-  align-items: center;
+  gap: 20px;
+  align-items: center; /* Centraliza os elementos */
+  padding: 20px; /* Padding geral */
+  max-width: 1200px; /* Largura máxima para desktops */
+  margin: 0 auto; /* Centraliza o container */
+  width: 100%; 
   justify-content: space-between;
 }
 
@@ -271,8 +282,9 @@ body {
 }
 
 nav {
+  font-size: 16px;
+  padding: 10px 20px;
   background-color: #003366;
-  padding: 10px 0;
 }
 
 nav ul {
@@ -284,44 +296,67 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 nav ul li a {
+  padding: 10px;
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
-
+main {
+  padding-top: 150px;
+}
+.main-content {
+  display: flex;
+  gap: 20px;
+  align-items: center; /* Centraliza os elementos */
+  padding: 20px; /* Padding geral */
+  max-width: 1200px; /* Largura máxima para desktops */
+  margin: 0 auto; /* Centraliza o container */
+  width: 100%; 
+}
 .container {
-  margin-top: 80px;
-  /* Adicione este espaçamento */
-  height: 100vh;
+ 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+ 
+}
+.container-content {
+  padding-top: 150px;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
+  justify-content: center;
+  
   background-color: #f0f0f0;
+  min-height: 80vh; /* Altura mínima para a seção */
+  flex-direction: column;
+  }
+
+.containe-content .image-container {
+  flex: 1; /* Permite que a imagem ocupe uma parte do espaço disponível */
+  max-width: 400px; /* Define uma largura máxima para a imagem */
 }
 
-.container .image-container {
-  max-width: 50%;
-  margin-right: 20px;
-  text-align: center;
+.container-content .image-container img {
+  width: 400px; /* A imagem ocupará 100% da largura do seu container */
+  height: auto; /* Mantém a proporção da imagem */
 }
 
-.container .image-container img {
-  width: 100%;
-  height: auto;
-}
-
-.container .text {
+.container-content .text {
   font-size: 1rem;
   max-width: 40%;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.text {
+  flex: 2; /* Permite que o conteúdo ocupe mais espaço em relação à imagem */
+  padding: 20px; /* Adiciona padding ao conteúdo */
 }
 
 .text h2 {
@@ -397,6 +432,25 @@ nav ul li a {
 }
 
 @media (max-width: 768px) {
+  .logo img {
+    max-width: 100px; /* Tamanho do logo em dispositivos móveis */
+  }
+nav img {
+  width: 20px; /* Largura dos ícones em dispositivos móveis */
+  height: 20px; /* Altura dos ícones em dispositivos móveis */
+}
+  nav {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  nav ul li {
+    margin: 0 8px;
+  }
+
+  nav a {
+    padding: 8px;
+  }
 
   .nav-menu {
     display: none;
@@ -451,6 +505,11 @@ nav ul li a {
     margin-top: 30px;
     font-size: 1.5em;
   }
+  .main-content {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
 
   .content-wrapper {
     margin-top: 20px;
@@ -483,12 +542,18 @@ nav ul li a {
     justify-content: center;
     height: 450px;
   }
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px; /* Tamanho da fonte dos rótulos e campos do formulário */
+  }
 
   .about-us {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding: 10px;
   }
 
   .contact-container {
@@ -501,6 +566,25 @@ nav ul li a {
   .contact-form2 {
     width: 60%;
     /* Ocupa 60% da largura do container */
+  }
+  .container {
+    flex-direction: column; /* Empilha a imagem e o conteúdo verticalmente em telas menores */
+    align-items: center; /* Centraliza os itens */
+    padding: 60px 40px;
+    min-height: auto;
+  }
+  .image-container img {
+    max-width: 100%;
+  }
+  .text p {
+    text-align: center;
+  }
+
+  footer {
+    padding: 20px 0;
+    /* Ajuste o padding conforme necessário */
+    font-size: 14px;
+    /* Ajuste o tamanho da fonte conforme necessário */
   }
 
 }
