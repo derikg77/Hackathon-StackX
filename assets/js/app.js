@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
     // Função para validar e enviar o formulário
     function validarFormulario(event) {
         // Previne o comportamento padrão do formulário

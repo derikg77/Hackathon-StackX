@@ -12,8 +12,20 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
-  
 
+}
+
+footer {
+  display: flex;
+  /* Usa Flexbox para organizar o conteúdo */
+  flex-direction: column;
+  /* Empilha os elementos verticalmente */
+  background-color: #f0f0f0;
+  /* Cor de fundo do footer */
+  padding: 20px;
+  /* Padding interno */
+  width: 100%;
+  /* Garante que o footer ocupe 100% da largura */
 }
 
 header {
@@ -24,6 +36,16 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  /* Fica fixo no topo */
+  z-index: 1000;
+  /* Garante que o header fique acima de outros elementos */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra para dar profundidade */
 }
 
 img {
@@ -131,6 +153,7 @@ nav ul li a {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
 .logo img {
   margin-top: 15px;
   max-width: 120px;
@@ -144,7 +167,7 @@ nav ul li a {
   padding: 20px;
   display: flex;
   gap: 20px;
-  width: 100%; 
+  width: 100%;
 }
 
 
@@ -158,13 +181,16 @@ nav ul li a {
   text-align: center;
   flex-basis: 30%;
 }
- .service p {
-  text-align: center; /* Centraliza o texto */
-  padding: 10px; /* Padding para o texto */
- }
+
+.service p {
+  text-align: center;
+  /* Centraliza o texto */
+  padding: 10px;
+  /* Padding para o texto */
+}
 
 .service img {
- 
+
   max-width: 100%;
   height: auto;
   border-radius: 10px;
@@ -227,6 +253,7 @@ nav ul li a {
   color: #666;
   padding: 0 15px 15px;
 }
+
 .consultoria {
   padding: 20px;
   background-color: #fff;
@@ -248,14 +275,20 @@ h3 {
   /* Azul */
   text-decoration: none;
 }
+
 .contact-form {
   display: flex;
-  flex-direction: column; /* Empilha os campos do formulário verticalmente */
-  width: 100%; /* O formulário ocupa 100% da largura do container */
-  max-width: 600px; /* Largura máxima do formulário */
+  flex-direction: column;
+  /* Empilha os campos do formulário verticalmente */
+  width: 100%;
+  /* O formulário ocupa 100% da largura do container */
+  max-width: 600px;
+  /* Largura máxima do formulário */
 }
+
 .contact-form label {
-  margin-top: 10px; /* Espaçamento entre os rótulos e os campos */
+  margin-top: 10px;
+  /* Espaçamento entre os rótulos e os campos */
 }
 
 
@@ -272,11 +305,15 @@ footer {
 .about-us {
   display: flex;
   gap: 20px;
-  align-items: center; /* Centraliza os elementos */
-  padding: 20px; /* Padding geral */
-  max-width: 1200px; /* Largura máxima para desktops */
-  margin: 0 auto; /* Centraliza o container */
-  width: 100%; 
+  align-items: center;
+  /* Centraliza os elementos */
+  padding: 20px;
+  /* Padding geral */
+  max-width: 1200px;
+  /* Largura máxima para desktops */
+  margin: 0 auto;
+  /* Centraliza o container */
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -294,12 +331,6 @@ footer {
 .about-text h2,
 .about-text h3 {
   color: #0056b3;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
 .top-bar {
@@ -357,45 +388,58 @@ nav ul li a {
   text-decoration: none;
   font-weight: bold;
 }
+
 main {
   padding-top: 150px;
 }
+
 .main-content {
   display: flex;
   gap: 20px;
-  align-items: center; /* Centraliza os elementos */
-  padding: 20px; /* Padding geral */
-  max-width: 1200px; /* Largura máxima para desktops */
-  margin: 0 auto; /* Centraliza o container */
-  width: 100%; 
+  align-items: center;
+  /* Centraliza os elementos */
+  padding: 20px;
+  /* Padding geral */
+  max-width: 1200px;
+  /* Largura máxima para desktops */
+  margin: 0 auto;
+  /* Centraliza o container */
+  width: 100%;
 }
+
 .container {
- 
+
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
- 
+
 }
+
 .container-content {
   padding-top: 150px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   background-color: #f0f0f0;
-  min-height: 80vh; /* Altura mínima para a seção */
+  min-height: 80vh;
+  /* Altura mínima para a seção */
   flex-direction: column;
-  }
+}
 
 .containe-content .image-container {
-  flex: 1; /* Permite que a imagem ocupe uma parte do espaço disponível */
-  max-width: 400px; /* Define uma largura máxima para a imagem */
+  flex: 1;
+  /* Permite que a imagem ocupe uma parte do espaço disponível */
+  max-width: 400px;
+  /* Define uma largura máxima para a imagem */
 }
 
 .container-content .image-container img {
-  width: 400px; /* A imagem ocupará 100% da largura do seu container */
-  height: auto; /* Mantém a proporção da imagem */
+  width: 400px;
+  /* A imagem ocupará 100% da largura do seu container */
+  height: auto;
+  /* Mantém a proporção da imagem */
 }
 
 .container-content .text {
@@ -406,9 +450,12 @@ main {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .text {
-  flex: 2; /* Permite que o conteúdo ocupe mais espaço em relação à imagem */
-  padding: 20px; /* Adiciona padding ao conteúdo */
+  flex: 2;
+  /* Permite que o conteúdo ocupe mais espaço em relação à imagem */
+  padding: 20px;
+  /* Adiciona padding ao conteúdo */
 }
 
 .text h2 {
@@ -485,12 +532,17 @@ main {
 
 @media (max-width: 768px) {
   .logo img {
-    max-width: 100px; /* Tamanho do logo em dispositivos móveis */
+    max-width: 100px;
+    /* Tamanho do logo em dispositivos móveis */
   }
-nav img {
-  width: 20px; /* Largura dos ícones em dispositivos móveis */
-  height: 20px; /* Altura dos ícones em dispositivos móveis */
-}
+
+  nav img {
+    width: 20px;
+    /* Largura dos ícones em dispositivos móveis */
+    height: 20px;
+    /* Altura dos ícones em dispositivos móveis */
+  }
+
   nav {
     font-size: 14px;
     padding: 8px 15px;
@@ -530,7 +582,11 @@ nav img {
   }
 
   header {
-    height: 25%;
+    height: 15%;
+  }
+
+  .top-bar {
+    gap: 10px !important;
   }
 
   .right-header {
@@ -557,6 +613,7 @@ nav img {
     margin-top: 30px;
     font-size: 1.5em;
   }
+
   .main-content {
     flex-direction: column;
     padding: 20px;
@@ -568,22 +625,27 @@ nav img {
     font-size: 1rem;
 
   }
+
   .palestras {
     flex-direction: column;
     gap: 20px;
   }
+
   .palestras-item img {
     max-width: 100%;
     height: 60vh;
     object-fit: cover;
     margin: 0 auto;
   }
+
   .palestra-item p {
     font-size: 1rem;
   }
-  .palestra-item  h2 {
+
+  .palestra-item h2 {
     font-size: 1rem;
   }
+
   .services {
     flex-direction: column;
     gap: 20px;
@@ -609,10 +671,12 @@ nav img {
     justify-content: center;
     height: 450px;
   }
+
   .contact-form label,
   .contact-form input,
   .contact-form textarea {
-    font-size: 16px; /* Tamanho da fonte dos rótulos e campos do formulário */
+    font-size: 16px;
+    /* Tamanho da fonte dos rótulos e campos do formulário */
   }
 
   .about-us {
@@ -634,15 +698,20 @@ nav img {
     width: 80%;
     /* Ocupa 60% da largura do container */
   }
+
   .container {
-    flex-direction: column; /* Empilha a imagem e o conteúdo verticalmente em telas menores */
-    align-items: center; /* Centraliza os itens */
+    flex-direction: column;
+    /* Empilha a imagem e o conteúdo verticalmente em telas menores */
+    align-items: center;
+    /* Centraliza os itens */
     padding: 60px 40px;
     min-height: auto;
   }
+
   .image-container img {
     max-width: 100%;
   }
+
   .text p {
     text-align: center;
   }
@@ -652,15 +721,33 @@ nav img {
     /* Ajuste o padding conforme necessário */
     font-size: 14px;
     /* Ajuste o tamanho da fonte conforme necessário */
+    flex-direction: column;
+    /* Empilha os elementos verticalmente em telas menores */
+    align-items: center;
+    /* Centraliza os elementos */
   }
 
 }
+
 @media (max-width: 680px) {
   .contact-container {
     flex-direction: column;
   }
+
+  .top-bar {
+    gap: 10px !important;
+  }
+
+  header {
+    height: 15%;
+  }
+
 }
+
 @media (max-width: 480px) {
+  header {
+    height: 15%;
+  }
 
   .nav-menu {
     display: none;
@@ -670,6 +757,10 @@ nav img {
 
   .nav-menu.active {
     display: flex;
+  }
+
+  .top-bar {
+    gap: 10px !important;
   }
 
   nav ul li {
@@ -694,6 +785,7 @@ nav img {
   .content-wrapper {
     font-size: 0.8rem;
   }
+
   .contact-container {
     display: flex;
     flex-direction: column;
@@ -703,6 +795,7 @@ nav img {
     padding: 0;
     margin: 0;
   }
+
   .contact-form2 {
     width: 100%;
   }

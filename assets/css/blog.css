@@ -1,13 +1,15 @@
-
 .content-wrapper {
     margin-top: 40px;
-    display: flex;
-    flex-wrap: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+    display: flex;
     gap: 20px;
+    width: 100%;
 }
 
-.image-column, .form-column {
+.image-column,
+.form-column {
     flex: 1;
     min-width: 200px;
     max-width: 30%;
@@ -39,7 +41,8 @@
 .contact-form {
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    border-radius: 20px; /* Bordas arredondadas */
+    border-radius: 20px;
+    /* Bordas arredondadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -66,16 +69,19 @@
 .contact-form button {
     width: 100%;
     padding: 10px;
-    background: #007BFF; /* Cor azul */
+    background: #007BFF;
+    /* Cor azul */
     border: none;
     color: white;
-    border-radius: 20px; /* Bordas arredondadas */
+    border-radius: 20px;
+    /* Bordas arredondadas */
     cursor: pointer;
     transition: background 0.3s;
 }
 
 .contact-form button:hover {
-    background: #0056b3; /* Azul mais escuro no hover */
+    background: #0056b3;
+    /* Azul mais escuro no hover */
 }
 
 @media (max-width: 768px) {
@@ -84,7 +90,9 @@
         align-items: center;
     }
 
-    .image-column, .text-column, .form-column {
+    .image-column,
+    .text-column,
+    .form-column {
         max-width: 100%;
     }
 }
