@@ -332,6 +332,9 @@ h3 {
   max-width: 600px;
   /* Largura máxima do formulário */
 }
+.contact-form h2  {
+  color: #0056b3;
+}
 
 .contact-form label {
   margin-top: 10px;
