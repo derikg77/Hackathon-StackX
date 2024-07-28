@@ -698,13 +698,13 @@ main {
   }
 
   .contact-container {
-    padding: 5px;
+    padding: 10px;
     /* Centraliza horizontalmente */
     margin: 0 auto;
   }
 
   .contact-form2 {
-    width: 80%;
+    width: 90%;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
@@ -744,7 +744,7 @@ main {
   .contact-container {
     flex-direction: column;
     margin: 0 auto;
-    padding: 5px;
+    padding: 10px;
   }
 
   .top-bar {
@@ -757,7 +757,7 @@ main {
   .contact-form2 {
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
   }
 
