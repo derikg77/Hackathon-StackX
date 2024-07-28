@@ -319,7 +319,10 @@ h3 {
   /* Azul */
   text-decoration: none;
 }
-
+.service img {
+  width: 100%;
+  height: auto;
+}
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -337,27 +340,17 @@ h3 {
 
 .contact-form2 {
   width: 100%;
-  /* Largura total do contêiner */
   display: flex;
-  /* Ativa o Flexbox */
   flex-direction: column;
-  /* Organiza os itens em coluna */
   align-items: center;
-  /* Centraliza os itens horizontalmente */
   justify-content: center;
-  /* Centraliza os itens verticalmente */
   flex: 1;
-  /* Permite que o contêiner cresça conforme necessário */
   margin: 10px auto;
-  /* Margem automática para centralização horizontal */
   background: rgba(255, 255, 255, 0.9);
-  /* Fundo branco com leve transparência */
   padding: 20px;
-  /* Espaçamento interno */
   border-radius: 20px;
-  /* Bordas arredondadas */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Sombra leve */
+
 }
 
 
@@ -599,20 +592,6 @@ main {
   /* Borda verde */
 }
 
-.contact-container {
-  max-width: 1200px;
-  height: auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  /* Centraliza os itens verticalmente */
-  align-items: center;
-  /* Centraliza os itens horizontalmente */
-  padding: 80px 0;
-  /* Ajusta o padding vertical para manter o espaçamento */
-  gap: 80px;
-  margin: 0 auto;
-}
 
 .success-message {
   display: none;
@@ -762,8 +741,9 @@ main {
     gap: 20px;
   }
 
-  .services img {
-    height: 60vh;
+  .service img {
+    height: auto;
+    width: 100%;
     object-fit: cover;
     margin: 0 auto;
   }
@@ -874,6 +854,12 @@ main {
     width: 100%;
     flex-direction: column;
   }
+  .service img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 480px) {
@@ -938,5 +924,11 @@ main {
 
   .text-column {
     flex-direction: column;
+  }
+  .service img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
   }
 }
