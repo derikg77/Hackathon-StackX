@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Domus Petra - Treinamento Lean Leadership</title>
     <style>
         body {
@@ -57,9 +58,11 @@
             font-weight: bold;
         }
         .container {
+           
+            height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             padding: 20px;
             background-color: #f0f0f0;
         }
@@ -73,7 +76,10 @@
             height: auto;
         }
         .container .text {
-            max-width: 50%;
+            
+            font-size: 1rem;
+            max-width: 40%;
+            
             background-color: white;
             padding: 20px;
             border-radius: 5px;
@@ -125,13 +131,14 @@
             </div>
         </div>
         <nav>
-            <ul>
+            <button class="menu-toggle">☰ Menu</button>
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre-nos.html">Sobre Nós</a></li>
                 <li><a href="palestras.html">Palestras</a></li>
                 <li><a href="consultoria.html">Consultoria</a></li>
                 <li><a href="treinamentos.html">Treinamentos</a></li>
-                <li><a href="blog1.html">Blog</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>

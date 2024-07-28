@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Domus Petra - Consultoria - Excelência Operacional</title>
     <style>
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 1rem;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-menu a:hover {
+            color: #003366;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: #0056b3;
+            color: #fff;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         .content-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -13,7 +48,8 @@
             gap: 20px;
         }
 
-        .image-column, .text-column {
+        .image-column,
+        .text-column {
             flex: 1;
             min-width: 300px;
         }
@@ -26,12 +62,9 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .text-column {
-            display: flex;
-            flex-direction: column;
-        }
-
+       
         .text-column .about-text {
+            display: flex;
             text-align: justify;
             padding: 20px;
             background: rgba(255, 255, 255, 0.9);
@@ -39,11 +72,12 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
-
+       
         .contact-form {
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            border-radius: 20px; /* Bordas arredondadas */
+            border-radius: 20px;
+            /* Bordas arredondadas */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -70,44 +104,76 @@
         .contact-form button {
             width: 100%;
             padding: 10px;
-            background: #007BFF; /* Cor azul */
+            background: #007BFF;
+            /* Cor azul */
             border: none;
             color: white;
-            border-radius: 20px; /* Bordas arredondadas */
+            border-radius: 20px;
+            /* Bordas arredondadas */
             cursor: pointer;
             transition: background 0.3s;
         }
 
         .contact-form button:hover {
-            background: #0056b3; /* Azul mais escuro no hover */
+            background: #0056b3;
+            /* Azul mais escuro no hover */
         }
 
         @media (max-width: 768px) {
+            .content-wrapper img {
+                height: 60vh;
+                object-fit: cover;
+                margin: 0 auto;
+            }
+
             .content-wrapper {
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
             }
 
-            .image-column, .text-column {
-                max-width: 100%;
+            .about-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+            .image-column,
+            .text-column {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin: 0 auto;
+
+            }
+
+            .image-column {
+                height: 60vh;
+                object-fit: cover;
+                margin: 0 auto;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Cabeçalho com Ícones de Mídia Social -->
     <header>
         <div class="top-bar">
             <div class="left-header">
                 <div class="social-media-icons">
-                    <a href="https://www.facebook.com/DomusPetra"><img src="./assets/img/facebook-icon.webp" alt="Facebook"></a>
+                    <a href="https://www.facebook.com/DomusPetra"><img src="./assets/img/facebook-icon.webp"
+                            alt="Facebook"></a>
                     <a href="https://www.instagram.com"><img src="./assets/img/instagram-icon.webp" alt="Instagram"></a>
                     <a href="https://www.linkedin.com"><img src="./assets/img/linkedin-icon.webp" alt="LinkedIn"></a>
                     <a href="https://www.pinterest.com"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
                     <a href="https://www.tiktok.com"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
                     <a href="https://www.youtube.com"><img src="./assets/img/facebook-icon.webp" alt="YouTube"></a>
                 </div>
-                <img src="images/logo.png" alt="Domus Petra Logo" style="height: 50px;">
+                <img src="./assets/img/logo.png" alt="Domus Petra Logo" style="height: 50px;">
             </div>
             <div class="right-header">
                 <a href="mailto:contato@domuspetra.com.br" class="contact-email">contato@domuspetra.com.br</a>
@@ -115,7 +181,8 @@
             </div>
         </div>
         <nav>
-            <ul>
+            <button class="menu-toggle">☰ Menu</button>
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre-nos.html">Sobre Nós</a></li>
                 <li><a href="palestras.html">Palestras</a></li>
@@ -135,25 +202,25 @@
             <div class="text-column">
                 <div class="about-text">
                     <h2>Excelência Operacional</h2>
-                    <p>Consultoria destinada à melhoria do desempenho operacional das organizações, 
-                        com redefinição e alinhamento dos objetivos estratégicos. Foco na melhoria 
+                    <p>Consultoria destinada à melhoria do desempenho operacional das organizações,
+                        com redefinição e alinhamento dos objetivos estratégicos. Foco na melhoria
                         e gestão de processos e pessoas, visando o aumento da eficiência,
-                         produtividade e qualidade.
+                        produtividade e qualidade.
                     </p>
                 </div>
                 <div class="contact-form" id="contact-form"">
                     <h2>Entre em contato conosco!</h2>
                     <form>
-                        <label for="name">Nome</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for=" name">Nome</label>
+                    <input type="text" id="name" name="name" required>
 
-                        <label for="phone">WhatsApp com DDD</label>
-                        <input type="tel" id="phone" name="phone" required>
+                    <label for="phone">WhatsApp com DDD</label>
+                    <input type="tel" id="phone" name="phone" required>
 
-                        <label for="message">Mensagem</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
 
-                        <button type="submit">Enviar</button>
+                    <button type="submit">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -165,4 +232,5 @@
     </footer>
     <script src="./assets/js/app.js"></script>
 </body>
+
 </html>

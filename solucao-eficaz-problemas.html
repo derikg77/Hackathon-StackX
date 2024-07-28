@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
     <title>Domus Petra - Solução Eficaz de Problemas</title>
     <style>
         .content-wrapper {
+            align-items: center;
+            width: 100%;
             display: flex;
-            gap: 20px;
             padding: 20px;
+            justify-content: space-between;
         }
 
         .image-column {
@@ -21,6 +24,8 @@
         }
 
         .text-column {
+            justify-content: center;
+            width: 100%;
             flex: 0 0 65%;
             display: flex;
             align-items: center;
@@ -60,6 +65,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Cabeçalho com Ícones de Mídia Social -->
     <header>
@@ -72,7 +78,8 @@
                     <a href="https://www.pinterest.com"><img src="./assets/img/pinterest-icon.webp" alt="Pinterest"></a>
                     <a href="https://www.tiktok.com"><img src="./assets/img/tiktok-icon.webp" alt="TikTok"></a>
                     <a href="https://www.youtube.com"><img src="./assets/img/facebook-icon.webp" alt="YouTube"></a>
-                    <img src="./assets/img/logo.png" alt="Domus Petra Logo" style="height: 50px;">
+                </div>
+                <img src="./assets/img/logo.png" alt="Domus Petra Logo" style="height: 50px;">
             </div>
             <div class="right-header">
                 <a href="mailto:contato@domuspetra.com.br" class="contact-email">contato@domuspetra.com.br</a>
@@ -80,13 +87,14 @@
             </div>
         </div>
         <nav>
-            <ul>
+            <button class="menu-toggle">☰ Menu</button>
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre-nos.html">Sobre Nós</a></li>
                 <li><a href="palestras.html">Palestras</a></li>
                 <li><a href="consultoria.html">Consultoria</a></li>
                 <li><a href="treinamentos.html">Treinamentos</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog1.html">Blog</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
@@ -101,23 +109,23 @@
             <div class="text-column">
                 <div class="about-text">
                     <h2>Solução Eficaz de Problemas</h2>
-                    <p>O treinamento Solução Eficaz de Problemas e Melhoria 
-                        Contínua agrega as melhores ferramentas e metodologias, 
-                        tendo como premissa a assertividade das ações corretivas, eficácia de 
-                        resultados e máxima eficiência durante o processo. Com esse treinamento 
+                    <p>O treinamento Solução Eficaz de Problemas e Melhoria
+                        Contínua agrega as melhores ferramentas e metodologias,
+                        tendo como premissa a assertividade das ações corretivas, eficácia de
+                        resultados e máxima eficiência durante o processo. Com esse treinamento
                         você estará capacitando sua equipe a utilizar três poderosas metodologias
-                         de solução de problemas e melhorias de processo, com diferentes níveis de
-                          complexidade e aplicação..</p>
+                        de solução de problemas e melhorias de processo, com diferentes níveis de
+                        complexidade e aplicação..</p>
 
-                          <p>O treinamento contempla onze ferramentas de gestão, que garantem 
-                            o sucesso na aplicação dos projetos de melhoria e solução de problemas.                                                   
-                            A eficácia do aprendizado e o retorno do investimento é garantido pela 
-                            aplicação das metodologias na solução de problemas reais pelos 
-                            participantes.</p>
-                        
-                       </P> Melhore a produtividade e eficiência da sua empresa e solucione os 
-                        problemas de uma única vez.</p>
-                    
+                    <p>O treinamento contempla onze ferramentas de gestão, que garantem
+                        o sucesso na aplicação dos projetos de melhoria e solução de problemas.
+                        A eficácia do aprendizado e o retorno do investimento é garantido pela
+                        aplicação das metodologias na solução de problemas reais pelos
+                        participantes.</p>
+
+                    </P> Melhore a produtividade e eficiência da sua empresa e solucione os
+                    problemas de uma única vez.</p>
+
                 </div>
             </div>
         </div>
@@ -128,4 +136,5 @@
     </footer>
     <script src="./assets/js/app.js"></script>
 </body>
+
 </html>

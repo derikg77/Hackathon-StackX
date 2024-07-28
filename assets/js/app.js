@@ -1,10 +1,20 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     // Função para validar e enviar o formulário
+  
     function validarFormulario() {
         const nome = form.querySelector('#nome');
         const whatsapp = form.querySelector('#whatsapp');
         const message = form.querySelector('#message');
-        const responseDiv = document.getElementById('response'); 
+        const responseDiv = document.getElementById('response');
 
         // Limpa a mensagem anterior
         responseDiv.style.display = 'none';
@@ -48,10 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Adiciona o evento de validação ao formulário
-    const form = document.getElementById('form'); 
+    const form = document.getElementById('form');
 
     if (form) {
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function (event) {
             event.preventDefault(); // Impede o envio padrão do formulário
             validarFormulario(); // Chama a função de validação e envio
         });
