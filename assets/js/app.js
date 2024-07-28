@@ -4,12 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
 
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function(e) {
-            e.preventDefault();
+        menuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
         });
     }
-
 
     // Função para validar e enviar o formulário
     function validarFormulario(event) {
@@ -36,24 +34,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Envia os dados do formulário para o arquivo PHP usando Fetch
-        const formData = new FormData();
+        const formData = new FormData(form);
         formData.append('nome', nome);
         formData.append('whatsapp', whatsapp);
         formData.append('mensagem', message);
 
-        fetch('assets/php/processar_formulario.php', {
+        fetch('http://localhost/xampp/hackatton/assets/php/processar_formulario.php', {
             method: 'POST',
-            body: formData
+            body: formData,
         })
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro na rede: ' + response.statusText);
+            }
+            return response.text(); // Retorna a resposta como texto
+        })
         .then(data => {
             // Exibe a resposta do PHP
             alert(data); // Exibe a resposta do PHP
             responseDiv.textContent = 'Formulário enviado com sucesso!';
-            responseDiv.className = 'message success'; // Adiciona a classe de sucesso
+            responseDiv.className = 'success message'; // Adiciona a classe de sucesso
             responseDiv.style.display = 'block'; // Mostra a mensagem
             form.reset(); // Limpa o formulário
-
+    
             // Esconde a mensagem após 3 segundos
             setTimeout(() => {
                 responseDiv.style.display = 'none'; // Esconde a mensagem

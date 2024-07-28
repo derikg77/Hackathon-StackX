@@ -535,7 +535,11 @@ main {
   justify-content: center;
   margin: 0 auto;
 }
-
+.success-message {
+  display: none;
+  color: green;
+  margin-top: 10px;
+}
 @media (max-width: 768px) {
   .logo img {
     max-width: 100px;
