@@ -216,21 +216,27 @@ nav ul li a {
 }
 
 .services {
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  flex-grow: 1;
+  gap: 40px;
 }
 
 .service {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
   flex-basis: 30%;
+  /* Define a largura base para cada serviço */
 }
 
 .service p {
   text-align: center;
-  /* Centraliza o texto */
   padding: 10px;
-  /* Padding para o texto */
+  margin: 0;
+  /* Adiciona margem zero para evitar espaçamento indesejado */
 }
 
 .service img {
@@ -319,10 +325,12 @@ h3 {
   /* Azul */
   text-decoration: none;
 }
+
 .service img {
   width: 100%;
   height: auto;
 }
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -332,7 +340,8 @@ h3 {
   max-width: 600px;
   /* Largura máxima do formulário */
 }
-.contact-form h2  {
+
+.contact-form h2 {
   color: #0056b3;
 }
 
@@ -621,7 +630,8 @@ main {
 
 @media (max-width: 768px) {
   .logo img {
-    max-width: 100px;
+    height: auto;
+    width: 100%;
     /* Tamanho do logo em dispositivos móveis */
   }
 
@@ -713,6 +723,13 @@ main {
     gap: 20px;
   }
 
+  .main-content img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
   .content-wrapper {
     margin-top: 20px;
     font-size: 1rem;
@@ -725,8 +742,8 @@ main {
   }
 
   .palestras-item img {
-    max-width: 100%;
-    height: 60vh;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     margin: 0 auto;
   }
@@ -747,7 +764,7 @@ main {
   .service img {
     height: auto;
     width: 100%;
-    object-fit: cover;
+   
     margin: 0 auto;
   }
 
@@ -755,6 +772,11 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .top-bar img {
+    height: auto;
+    width: 100%;
   }
 
   .contact-form {
@@ -781,6 +803,11 @@ main {
     padding: 10px;
   }
 
+  .about-us img {
+    height: auto;
+    width: 100%;
+  }
+
   .contact-container {
     padding: 40px 0;
     /* Centraliza horizontalmente */
@@ -805,7 +832,8 @@ main {
   }
 
   .image-container img {
-    max-width: 100%;
+    height: auto;
+    width: 100%;
   }
 
   .text p {
@@ -857,11 +885,16 @@ main {
     width: 100%;
     flex-direction: column;
   }
+
   .service img {
     height: auto;
     width: 100%;
-    object-fit: cover;
+  
     margin: 0 auto;
+  }
+  .about-us img {
+    height: auto;
+    width: 100%;
   }
 }
 
@@ -928,10 +961,14 @@ main {
   .text-column {
     flex-direction: column;
   }
+
   .service img {
     height: auto;
     width: 100%;
-    object-fit: cover;
-    margin: 0 auto;
+   
+  }
+  .about-us img {
+    height: auto;
+    width: 100%;
   }
 }
