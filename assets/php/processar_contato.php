@@ -1,60 +1,58 @@
 <?php
-require 'db.php';
-include 'config.php';
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+
+require 'db.php'; // Certifique-se de que este arquivo contém as credenciais corretas
+require 'config.php';
+
+
 $servername = "localhost";
 $username = "root";
 $password = "Derikadr156";
 $dbname = "site_palestras";
 
-// Permitir requisições de qualquer origem
-header("Access-Control-Allow-Origin: *");
-// Permitir métodos específicos
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-// Permitir cabeçalhos específicos
-header("Access-Control-Allow-Headers: Content-Type");
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     // Criar conexão
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Verificar conexão
     if ($conn->connect_error) {
-        die("Conexão falhou: " . $conn->connect_error);
+        http_response_code(500);
+        echo "Erro ao conectar ao banco de dados.";
+        exit;
     }
 
-    // Obter dados do formulário
-    $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
-    $whatsapp = isset($_POST['whatsapp']) ? $_POST['whatsapp'] : '';
-    $mensagem = isset($_POST['mensagem']) ? $_POST['mensagem'] : '';
-    $email = isset($_POST['email']) ? $_POST['email']: '';
-    $telefone = isset($_POST['telefone']) ? $_POST['telefone']: '';
+    // Obter dados do formulário e sanitizar
+    $nome = isset($_POST['nome']) ? trim($_POST['nome']) : '';
+    $whatsapp = isset($_POST['whatsapp']) ? trim($_POST['whatsapp']) : '';
+    $mensagem = isset($_POST['mensagem']) ? trim($_POST['mensagem']) : '';
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $telefone = isset($_POST['telefone']) ? trim($_POST['telefone']) : '';
 
-    if (!empty($nome) && !empty($email) && !empty($whatsapp) && !empty($mensagem) && !empty($email)  && !empty($email)) {
-        // Aqui você pode adicionar a lógica para enviar o e-mail
-        // mail($to, $subject, $message, $headers);
-        
-        echo 'success'; // Retorna 'success' para o JavaScript
-        exit; // Encerra o script
-        
-    
+    // Verificar se todos os campos estão preenchidos
+    if (!empty($nome) && !empty($whatsapp) && !empty($mensagem) && !empty($email) && !empty($telefone)) {
+        // Preparar e executar a inserção dos dados
+        $stmt = $conn->prepare("INSERT INTO contato (nome, telefone, email, mensagem) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $nome, $telefone, $email, $mensagem);
 
-  
-
-    // Inserir dados no banco de dados
-    $sql = "INSERT INTO contato (nome, telefone, email, mensagem) VALUES ('$nome', '$telefone', '$email', '$mensagem')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Novo registro criado com sucesso";
+        if ($stmt->execute()) {
+            echo json_encode(['status' => 'success', 'message' => 'Formulário enviado com sucesso!']);
+        } else {
+            http_response_code(400);
+    echo json_encode(['status' => 'error', 'message' => 'Por favor, preencha todos os campos.']);
+        }
+        $stmt->close();
     } else {
-        echo "Erro: " . $sql . "<br>" . $conn->error;
+        http_response_code(400);
+        echo 'Por favor, preencha todos os campos.';
     }
 
-    $conn->close();
-}} else {
+    $conn->close(); // Fechar a conexão
+} else {
     // Se não for um POST, retornar um erro
     http_response_code(405);
-    echo "Método não permitido.";
+    echo json_encode(['status' => 'error', 'message' => 'Método não permitido.']);
 }
 ?>
-

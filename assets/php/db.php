@@ -1,5 +1,7 @@
 <?php  
 
+require 'precessar_formulario.php';
+require 'config.php';
 
 $host = 'localhost';
 $db = 'site_palestras';

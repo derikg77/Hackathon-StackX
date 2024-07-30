@@ -1,5 +1,5 @@
 <?php
-define('BASE_URL', 'http://localhost/hackatton//');
+define('BASE_URL', 'http://localhost/xampp/hackatton/index.html');
 
 ?>
 
